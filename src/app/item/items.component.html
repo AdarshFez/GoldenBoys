@@ -10,7 +10,7 @@ So you can still use template expressions, bindings, templates as well as all th
 The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
 http://docs.nativescript.org/ui/action-bar
 -->
-<ActionBar title="My App">
+<ActionBar title="Collection">
 </ActionBar>
 
 <!--
@@ -27,8 +27,11 @@ You can learn more about the NativeScript core theme at https://github.com/nativ
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>
-                <Label [nsRouterLink]="['/item', item.id]" [text]="item.name"></Label>
+                <Label [nsRouterLink]="['/item']" [text]="item.name"></Label>
             </StackLayout>
         </ng-template>
     </ListView>
 </GridLayout>
+
+
+
