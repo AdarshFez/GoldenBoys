@@ -1,0 +1,25 @@
+import { NgModule, Component } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { Routes } from "@angular/router";
+
+import { ItemsComponent } from "./item/items.component";
+import { ItemDetailComponent } from "./item/item-detail.component";
+import { HomeComponent } from "./home/home.component";
+import { navigation } from "./navigation/navig";
+import { gold } from "./Gold/gold.component";
+import { CurrentEvent } from "./CurrentEvent/CurrentEvent.component";
+import { path } from "tns-core-modules/file-system/file-system";
+
+const routes: Routes = [
+
+    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "home", component: HomeComponent },
+    {path: "GoodAG", component: gold},
+    {path: "CurrentEvent", component: CurrentEvent}
+];
+
+@NgModule({
+    imports: [NativeScriptRouterModule.forRoot(routes)],
+    exports: [NativeScriptRouterModule]
+})
+export class AppRoutingModule { }

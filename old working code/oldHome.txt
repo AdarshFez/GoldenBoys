@@ -1,0 +1,11 @@
+
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Golden Boys"></Label>
+</ActionBar>
+
+<!-- Storage for   -->
+<StackLayout>
+    <Label text="Home Comp"></Label>
+    <Label text="Home Comp"></Label>
+    <Label text="Home Comp"></Label>
+</StackLayout>
