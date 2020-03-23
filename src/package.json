@@ -3,8 +3,5 @@
   "android": {
     "v8Flags": "--expose_gc",
     "markingMode": "none"
-  },
-  "dependencies": {
-    "nativescript-ui-sidedrawer": "^8.0.0"
   }
 }
