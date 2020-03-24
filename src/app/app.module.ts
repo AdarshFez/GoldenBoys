@@ -5,7 +5,6 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-
 @NgModule({
     bootstrap: [
         AppComponent

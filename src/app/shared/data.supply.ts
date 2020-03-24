@@ -6,5 +6,4 @@ export interface DataItem {
     time: number;
     phone: number;
 
-
 }

@@ -1,5 +1,12 @@
-<ActionBar>
+<ActionBar title="topmost">
+    <GridLayout>
     <Label text="Home"></Label>
+    <FlexboxLayout>
+        <button text = "add"></button>
+        <button text = "delete"></button>
+        <button text = "refresh"> </button>
+    </FlexboxLayout>
+</GridLayout>
 </ActionBar>
 
 <!-- <GridLayout>
@@ -12,14 +19,17 @@
     </ListView>
 </GridLayout> -->
 
-<GridLayout>
+<GridLayout class = "itemHolder">
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>
                 <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+
             </StackLayout>
         </ng-template>
     </ListView>
 </GridLayout>
+
+
 
 

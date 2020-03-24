@@ -1,10 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 
-import { DataService, DataItem } from "../shared/dataS.service";
+import { DataService } from "../shared/dataS.service";
+import { DataItem } from "../shared/data.supply";
 
 @Component({
     selector: "Home",
-    templateUrl: "./home.component.html"
+    templateUrl: "./home.component.html",
+    styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
     items: Array<DataItem>;

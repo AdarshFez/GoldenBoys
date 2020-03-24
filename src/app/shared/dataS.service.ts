@@ -3,22 +3,10 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { DataItem } from "./data.supply";
 
-//export interface DataItem {}
-//     id: number;
-//     name: string;
-//     description: string;
-//     address: string;
-//     time: number;
-//     phone: number;
-
-// }
-
 @Injectable({
     providedIn: "root"
 })
 export class DataService {
-
-
 
     private items = new Array<DataItem>(
         {
@@ -46,7 +34,6 @@ export class DataService {
             phone: 234345
         }
 
-
     );
 
     constructor(private http: HttpClient) {}
@@ -61,14 +48,18 @@ export class DataService {
 
     makeItem(nam: string, des: string, add: string, tim: number, phone: number): void {
         // tslint:disable-next-line: no-object-literal-type-assertion
-        const temp = <DataItem>{};
+        const temp: any = <DataItem>{};
         temp.name = nam;
         temp.description = des;
         temp.address = add;
         temp.time = tim;
         temp.phone = phone;
-        //const temp =  (1, nam, des, add, tim, phone );
-        //<DataItem> = (1 , nam , des ; add ; tim ; phone);
-        this.http.put("https://goldenboys-be087.firebaseio.com/supplies.json", temp);
-       }
+        // const temp =  (1, nam, des, add, tim, phone );
+        // <DataItem> = (1 , nam , des ; add ; tim ; phone);
+        this.http.put("https://goldenboys-be087.firebaseio.com/supplies.json", temp).subscribe();
+    }
+
+    serverGet(): void {
+        const temp = 1 + 1;
+    }
 }
