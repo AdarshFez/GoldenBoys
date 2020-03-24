@@ -1,12 +1,10 @@
 <ActionBar title="topmost">
     <GridLayout>
     <Label text="Home"></Label>
-    <FlexboxLayout>
-        <button text = "add"></button>
-        <button text = "delete"></button>
-        <button text = "refresh"> </button>
-    </FlexboxLayout>
-</GridLayout>
+        <FlexboxLayout>
+            <Button text="Action" [nsRouterLink]="['/actiont', actiont]"></Button>
+        </FlexboxLayout>
+    </GridLayout>
 </ActionBar>
 
 <!-- <GridLayout>

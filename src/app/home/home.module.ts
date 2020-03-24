@@ -5,6 +5,7 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 import { ItemDetailComponent } from "./item-detail/item-detail.component";
 import { SuppliesComponent } from "./supplies/supplies-detail.component";
+import { ActionComponent } from "../action/action.component";
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { SuppliesComponent } from "./supplies/supplies-detail.component";
     declarations: [
         HomeComponent,
         ItemDetailComponent,
-        SuppliesComponent
+        SuppliesComponent,
+        ActionComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
