@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { DataService } from "../shared/dataS.service";
+import { DataService } from "../shared/data.service";
 import { DataItem } from "../shared/data.supply";
 
 @Component({
