@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 
-import { DataService } from "../../shared/dataS.service";
+import { DataService } from "../../shared/data.service";
 import { DataItem } from "../../shared/data.supply";
 @Component({
     selector: "ItemDetail",

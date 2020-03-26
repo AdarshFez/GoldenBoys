@@ -4,8 +4,8 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 import { ItemDetailComponent } from "./item-detail/item-detail.component";
-import { SuppliesComponent } from "./supplies/supplies-detail.component";
 import { ActionComponent } from "../action/action.component";
+import { ActionModule } from "../action/action.module";
 
 @NgModule({
     imports: [
@@ -15,7 +15,6 @@ import { ActionComponent } from "../action/action.component";
     declarations: [
         HomeComponent,
         ItemDetailComponent,
-        SuppliesComponent,
         ActionComponent
     ],
     schemas: [
