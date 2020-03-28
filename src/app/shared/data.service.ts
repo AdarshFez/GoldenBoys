@@ -9,7 +9,7 @@ import { Observable } from "tns-core-modules/ui/page/page";
 })
 export class DataService {
 
-    private url = "https://goldenboys-be087.firebaseio.com/items";
+    private url = "https://goldenboys-e429e.firebaseio.com/items.json";
 
     private items = new Array<DataItem>(
         {
@@ -56,16 +56,17 @@ export class DataService {
     makeItemLocal(nam: string, des: string, add: string, tim: number, phone: number): void {
         const temp = {id: 0, name: "", description: "", address: "" , time: 0, phone: 0 };
         temp.id = this.items.length;
-        temp.name = "nam";
-        temp.description = "des";
-        temp.address = "add";
-        temp.time = 4;
-        temp.phone = 444;
+        temp.name = nam;
+        temp.description = des;
+        temp.address = add;
+        temp.time = tim;
+        temp.phone = phone;
         this.items.push(temp);
+        alert("made local");
     }
     makeItem(nam: string, des: string, add: string, tim: number, phone: number): void {
         // tslint:disable-next-line: no-object-literal-type-assertion
-        //const temp = <DataItem> {};
+        // const temp = <DataItem> {};
         // temp.id = this.items.length;
         // temp.name = nam;
         // temp.description = des;
@@ -73,16 +74,17 @@ export class DataService {
         // temp.address = add;
         // temp.time = tim;
         // temp.phone = phone;
-        //this.temp =  (1, nam, des, add, tim, phone );
+        // this.temp =  (1, nam, des, add, tim, phone );
         // <DataItem> = (1 , nam , des ; add ; tim ; phone);
 
         // pull from server? save list then push back?
-        this.http.put("https://goldenboys-be087.firebaseio.com/items.json", nam).subscribe();
+        this.http.put(this.url, nam).subscribe();
+        alert("made local");
 
     }
 
     sendAll(): void {
-        this.http.put("https://goldenboys-be087.firebaseio.com/items.json", this.items).subscribe();
+        this.http.put(this.url, this.items).subscribe();
     }
 
     serverGet(): void {
@@ -92,6 +94,11 @@ export class DataService {
     refresh() {
 
         return this.http.get<{items: DataItem; }>(this.url);
+    }
+
+    test(some: string) {
+        const some1 = "hello";
+        this.http.put(this.url, some1).subscribe();
     }
 
 }

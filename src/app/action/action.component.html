@@ -4,58 +4,39 @@
 </ActionBar>
 
 <StackLayout>
-    <label text = "Adding Your Items"></label>
-    <div class = actioner>
-        <TextField hint="Enter Name"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> --> -->
-        var Name = textFeild.text;
-        <TextField hint="Enter Item"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var Item = textFeild.text;
-        <TextField hint="Enter Time"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var Time = textFeild.text;
-        <TextField hint="Enter address"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var address = textFeild.text;
-        <TextField hint="Enter phone"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var phone = textFeild.text;
+    <TextField hint="Enter name"
+           [text]='name'
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressN($event)"
+    ></TextField>
+    <TextField hint="Enter item"
+           [text]='item'
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressI($event)"
+    ></TextField>
+    <TextField hint="Enter address"
+           [text]='address'
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressA($event)"
+    ></TextField>
+    <TextField hint="Enter time"
+           [text]='time'
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressT($event)"
+    ></TextField>
+    <TextField hint="Enter Date"
+           [text]='phonee'
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressP($event)"
+    ></TextField>
 
-
-        <Button text="Make new Item" (tap)="onTap(Name, Item,address,Time,phone)" ></Button>
-
-    </div>
-    <!-- Local -->
-    <div class = actioner>
-        <TextField hint="Enter Name"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> --> -->
-        var Name = textFeild.text;
-        <TextField hint="Enter Item"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var Item = textFeild.text;
-        <TextField hint="Enter Time"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var Time = textFeild.text;
-        <TextField hint="Enter address"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var address = textFeild.text;
-        <TextField hint="Enter phone"></TextField>
-        <!-- <TextField input type="text" name="serial" id="serial" [(ngModel)]="serial" [value]="serial" class="form-control"> </TextField> -->
-        var phone = textFeild.text;
-
-
-        <Button text="Make new Item Local" (tap)="onTap2(Name, Item,address,Time,phone)" ></Button>
-
-    </div>
-
-    <div>
-        <label text = "The amount of members in Items is : items.length" ></label>
-        <Button text="Get length" tap="getLength()" ></Button>
-        <label text = "Send all button below" ></label>
-        <Button text="send it all" (tap)="onSend()" ></Button>
-
-        <Button text="refresh" (tap)="refresh()" ></Button>
-    </div>
-
+<!-- <Button text="Alert" (tap)="myfun()" ></Button> -->
+<Button text="makeLocal" (tap)="onTap2()" ></Button>
+<Button text="send all" (tap)="onSend()" ></Button>
+<Button text="Server make " (tap)="onTap()" ></Button>
 </StackLayout>
