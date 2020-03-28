@@ -15,7 +15,7 @@ export class ActionComponent {
      name = "";
      item = "";
      address = "";
-     time = 0;
+     time = "";
      phonee = 0;
      number = 0;
 
@@ -42,7 +42,7 @@ export class ActionComponent {
      onReturnPressT(args) {
         // returnPress event will be triggered when user submits a value
         const textField = <TextField>args.object;
-        this.time = Number(textField.text);
+        this.time = (textField.text);
         this.number++;
      }
      onReturnPressA(args) {

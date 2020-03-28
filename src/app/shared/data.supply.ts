@@ -3,7 +3,7 @@ export interface DataItem {
     name: string;
     description: string;
     address: string;
-    time: number;
+    time: string;
     phone: number;
 
 }
