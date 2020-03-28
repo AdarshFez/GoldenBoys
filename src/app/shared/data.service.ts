@@ -65,21 +65,15 @@ export class DataService {
         alert("made local");
     }
     makeItem(nam: string, des: string, add: string, tim: number, phone: number): void {
-        // tslint:disable-next-line: no-object-literal-type-assertion
-        // const temp = <DataItem> {};
-        // temp.id = this.items.length;
-        // temp.name = nam;
-        // temp.description = des;
-        nam = "hello";
-        // temp.address = add;
-        // temp.time = tim;
-        // temp.phone = phone;
-        // this.temp =  (1, nam, des, add, tim, phone );
-        // <DataItem> = (1 , nam , des ; add ; tim ; phone);
-
-        // pull from server? save list then push back?
-        this.http.put(this.url, nam).subscribe();
-        alert("made local");
+        const temp = {id: 0, name: "", description: "", address: "" , time: 0, phone: 0 };
+        temp.id = this.items.length;
+        temp.name = nam;
+        temp.description = des;
+        temp.address = add;
+        temp.time = tim;
+        temp.phone = phone;
+        this.http.put(this.url, temp).subscribe();
+        alert("made Server");
 
     }
 

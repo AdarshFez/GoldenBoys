@@ -4,31 +4,36 @@
 </ActionBar>
 
 <StackLayout>
+    <label text = "Enter name Here then hit done"></label>
     <TextField hint="Enter name"
            [text]='name'
            keyboardType="datetime"
            returnKeyType="done"
            (returnPress)="onReturnPressN($event)"
     ></TextField>
+    <label text = "Enter Item Here then hit done"></label>
     <TextField hint="Enter item"
            [text]='item'
            keyboardType="datetime"
            returnKeyType="done"
            (returnPress)="onReturnPressI($event)"
     ></TextField>
+    <label text = "Enter Address Here then hit done"></label>
     <TextField hint="Enter address"
            [text]='address'
            keyboardType="datetime"
            returnKeyType="done"
            (returnPress)="onReturnPressA($event)"
     ></TextField>
+    <label text = "Enter Time Here then hit done"></label>
     <TextField hint="Enter time"
            [text]='time'
            keyboardType="datetime"
            returnKeyType="done"
            (returnPress)="onReturnPressT($event)"
     ></TextField>
-    <TextField hint="Enter Date"
+    <label text = "Enter Phone number Here then hit done"></label>
+    <TextField hint="Enter phone"
            [text]='phonee'
            keyboardType="datetime"
            returnKeyType="done"
