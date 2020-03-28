@@ -2,40 +2,43 @@ import { Injectable } from "@angular/core";
 
 import { HttpClient } from "@angular/common/http";
 import { DataItem } from "./data.supply";
-import { Observable } from "tns-core-modules/ui/page/page";
+import { Observable, of } from "rxjs";
+import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
     providedIn: "root"
 })
 export class DataService {
 
-    private url = "https://goldenboys-e429e.firebaseio.com/items.json";
+    private url = "https://goldenboys-be087.firebaseio.com/items.json";
 
+    // tslint:disable-next-line: variable-name
     private items = new Array<DataItem>(
-        {
-            id: 1,
-            name: "Jim Johnfggf",
-            description: "Toilet Paper",
-            address: "3243 dasd",
-            time: "4 pm",
-            phone: 757474747
-        },
-        {
-            id: 2,
-            name: "cornnn John",
-            description: "Paper",
-            address: "32 sddf",
-            time: "8 pm ",
-            phone: 4728955
-        },
-        {
-            id: 3,
-            name: "ham Jon",
-            description: "tooth bursh",
-            address: "48 main",
-            time: "2 pm",
-            phone: 234345
-        }
+        // {
+        //     id: 1,
+        //     name: "Jim Johnfggf",
+        //     description: "Toilet Paper",
+        //     address: "3243 dasd",
+        //     time: "4 pm",
+        //     phone: 757474747
+        // },
+        // {
+        //     id: 2,
+        //     name: "cornnn John",
+        //     description: "Paper",
+        //     address: "32 sddf",
+        //     time: "8 pm ",
+        //     phone: 4728955
+        // },
+        // {
+        //     id: 3,
+        //     name: "ham Jon",
+        //     description: "tooth bursh",
+        //     address: "48 main",
+        //     time: "2 pm",
+        //     phone: 234345
+        // }
+
 
     );
 
@@ -72,7 +75,7 @@ export class DataService {
         temp.address = add;
         temp.time = tim;
         temp.phone = phone;
-        this.http.put(this.url, temp).subscribe();
+        this.http.post(this.url, temp).subscribe();
         alert("made Server");
 
     }
@@ -90,9 +93,23 @@ export class DataService {
         return this.http.get<{items: DataItem; }>(this.url);
     }
 
-    test(some: string) {
-        const some1 = "hello";
-        this.http.put(this.url, some1).subscribe();
+    localLength() {
+       alert(this.items.length);
+    }
+
+    onGetData(): void {
+        this.http.get<Array<DataItem>>(this.url).subscribe((data) => this.items = data);
+        // tslint:disable-next-line: prefer-for-of
+        // for (let i = 0; i < this.items.length; i++) {
+        //     this.items.push(this.Tempitems.pop());
+        // }
+        // this.items.pop();
+        // // tslint:disable-next-line: prefer-for-of
+        // for (let i = 0; i < this.Tempitems.length; i++) {
+        //     this.items.push(this.Tempitems.pop());
+        // }
+        //alert(this.items.length);
+
     }
 
 }

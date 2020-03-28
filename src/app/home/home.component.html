@@ -3,8 +3,10 @@
     <Label text="Home"></Label>
         <FlexboxLayout>
             <Button text="actions" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
+            <Button class = "refresh" text="refresh " (tap)="refreshItems()" ></Button>
         </FlexboxLayout>
     </GridLayout>
+
 </ActionBar>
 
 <!-- <GridLayout>
@@ -21,11 +23,12 @@
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+                <Label [nsRouterLink]="['../item', item.id]" [text]="item.id + '. Name: ' +item.name"></Label>
 
             </StackLayout>
         </ng-template>
     </ListView>
+
 </GridLayout>
 
 

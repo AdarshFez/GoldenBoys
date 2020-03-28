@@ -17,7 +17,6 @@ export class ActionComponent {
      address = "";
      time = "";
      phonee = 0;
-     number = 0;
 
      private _routerExtensions: RouterExtensions;
 
@@ -31,43 +30,48 @@ export class ActionComponent {
         // returnPress event will be triggered when user submits a value
         const textField = <TextField>args.object;
         this.name = textField.text;
-        this.number++;
      }
      onReturnPressI(args) {
         // returnPress event will be triggered when user submits a value
         const textField = <TextField>args.object;
         this.item = textField.text;
-        this.number++;
      }
      onReturnPressT(args) {
         // returnPress event will be triggered when user submits a value
         const textField = <TextField>args.object;
         this.time = (textField.text);
-        this.number++;
      }
      onReturnPressA(args) {
         // returnPress event will be triggered when user submits a value
         const textField = <TextField>args.object;
         this.address = textField.text;
-        this.number++;
      }
      onReturnPressP(args) {
         // returnPress event will be triggered when user submits a value
         const textField = <TextField>args.object;
         this.phonee = Number(textField.text);
-        this.number++;
 
         alert(this.name + this.item + this.address + this.time + this.phonee);
      }
+        // sends everything
      onSend() {
         this.service.sendAll();
     }
+        // make object serverside
      onTap(): void {
         this.service.makeItem(this.name , this.item, this.address, this.time, this.phonee);
     }
-
-     onTap2(): void {
+        // make object locally
+     local(): void {
         this.service.makeItemLocal(this.name , this.item, this.address, this.time, this.phonee);
+    }
+        // get local size
+     localsize(): void {
+     this.service.localLength();
+    }
+        // delete number you enter
+     delete(num: number): void {
+        const number = 1;
     }
 
 }
