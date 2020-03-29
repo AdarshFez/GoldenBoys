@@ -17,6 +17,8 @@ export class ActionComponent {
      address = "";
      time = "";
      phonee = 0;
+     deleteNum = 0;
+     nim = 0;
 
      private _routerExtensions: RouterExtensions;
 
@@ -53,6 +55,11 @@ export class ActionComponent {
 
         alert(this.name + this.item + this.address + this.time + this.phonee);
      }
+     onReturnPressD(args) {
+        // returnPress event will be triggered when user submits a value
+        const textField = <TextField>args.object;
+        this.deleteNum = Number(textField.text);
+     }
         // sends everything
      onSend() {
         this.service.sendAll();
@@ -67,11 +74,25 @@ export class ActionComponent {
     }
         // get local size
      localsize(): void {
-     this.service.localLength();
+        this.service.localLength();
     }
         // delete number you enter
-     delete(num: number): void {
-        const number = 1;
+     delete(): void {
+
+        if (this.deleteNum <= 1) {
+            alert("Sorry Can not delete That one");
+        } else {
+
+            this.nim = this.service.getItemNum(this.deleteNum);
+            //alert("passed zerooooo" + this.nim);
+            if (this.nim === -1) {
+                alert("Sorry item does not exist");
+                //alert("Sorry item does not exist");
+            } else {
+                this.service.delete(this.service.getItemNum(this.deleteNum));
+                this.service.reorder();
+            }
+        }
     }
 
 }

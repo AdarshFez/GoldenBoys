@@ -2,7 +2,6 @@
     <Label text="Action Menu"></Label>
     <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
-
 <StackLayout>
     <label text = "Enter name Here then hit done"></label>
     <TextField hint="Enter name"
@@ -40,13 +39,24 @@
            (returnPress)="onReturnPressP($event)"
     ></TextField>
 
-<!-- <Button text="Alert" (tap)="myfun()" ></Button> -->
-<Button text="Local Size " (tap)="localsize()" ></Button>
-<!-- <Button text="Temp Size " (tap)="onRefreshtemp()" ></Button> -->
-<Button text="Make a new Donation" (tap)="local()" ></Button>
-<Button text="Sync with DataBase" (tap)="onSend()" ></Button>
-<Button text="Sync with DataBase" (tap)="onSend()" ></Button>
+       <!-- <Button text="Alert" (tap)="myfun()" ></Button> -->
+       <Button text="Local Size " (tap)="localsize()" ></Button>
+       <!-- <Button text="Temp Size " (tap)="onRefreshtemp()" ></Button> -->
+       <Button text="Make a new Donation" (tap)="local()" ></Button>
+       <Button text="Sync with DataBase" (tap)="onSend()" ></Button>
+       <Button text="Sync with DataBase" (tap)="onSend()" ></Button>
 
+       <label text = "Enter Number you want deleted here" ></label>
+       <TextField hint="Enter Number you want deleted here"
+           [text]='deleteNum'
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressD($event)"
+        ></TextField>
+
+
+       <Button text = 'press to delete the number entered' (tap)="delete()" ></Button>
 <!-- <Button text="Refresh List " (tap)="onRefresh()" ></Button> -->
 <!-- help -->
 </StackLayout>
+

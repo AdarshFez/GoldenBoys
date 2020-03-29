@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 
 import { HttpClient } from "@angular/common/http";
 import { DataItem } from "./data.supply";
-import { Observable, of } from "rxjs";
+import { Observable, of, throwError } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
@@ -14,14 +14,14 @@ export class DataService {
 
     // tslint:disable-next-line: variable-name
     private items = new Array<DataItem>(
-        // {
-        //     id: 1,
-        //     name: "Jim Johnfggf",
-        //     description: "Toilet Paper",
-        //     address: "3243 dasd",
-        //     time: "4 pm",
-        //     phone: 757474747
-        // },
+        {
+            id: 1,
+            name: "Help Menu",
+            description: " Hit Refresh to see current active, Hit Action menu",
+            address: "Press the 'Done Hit me' after every entry",
+            time: "Then hit 'Make a new Donatoin'",
+            phone: 0
+        }
         // {
         //     id: 2,
         //     name: "cornnn John",
@@ -38,7 +38,6 @@ export class DataService {
         //     time: "2 pm",
         //     phone: 234345
         // }
-
 
     );
 
@@ -94,22 +93,49 @@ export class DataService {
     }
 
     localLength() {
-       alert(this.items.length);
+        alert(this.items.length);
+    }
+
+    getItemNum(num: number): number {
+        for (let i = 0; i < this.items.length; i++) {
+          if (this.items[i].id === num) {
+
+                return i + 1;
+
+            }
+        }
+        //alert("not in array returning" + -1);
+
+        return -1;
+        }
+
+    delete(location: number) {
+
+        let i = this.items.length;
+        const tempitems = new Array<DataItem>();
+        while (i > location) {
+            tempitems.push(this.items.pop());
+            i--;
+        }
+        this.items.pop();
+        i = tempitems.length;
+        while (i !== 0) {
+            this.items.push(tempitems.pop());
+            i--;
+        }
+        alert(" Its out of here ");
     }
 
     onGetData(): void {
         this.http.get<Array<DataItem>>(this.url).subscribe((data) => this.items = data);
-        // tslint:disable-next-line: prefer-for-of
-        // for (let i = 0; i < this.items.length; i++) {
-        //     this.items.push(this.Tempitems.pop());
-        // }
-        // this.items.pop();
-        // // tslint:disable-next-line: prefer-for-of
-        // for (let i = 0; i < this.Tempitems.length; i++) {
-        //     this.items.push(this.Tempitems.pop());
-        // }
-        //alert(this.items.length);
+    }
 
+    reorder() {
+        let i = 1;
+        while (i <= this.items.length) {
+            this.items[i - 1].id = i;
+            i++;
+        }
     }
 
 }
