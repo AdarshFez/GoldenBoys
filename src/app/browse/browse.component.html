@@ -1,8 +1,31 @@
-<ActionBar>
-    <Label text="Good As Gold"></Label>
+<ActionBar title="topmost">
+    <GridLayout>
+    <Label text="Good as Gold"></Label>
+        <FlexboxLayout>
+            <Button text="actions" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
+            <Button class = "refresh" text="refresh " (tap)="refresh()" ></Button>
+        </FlexboxLayout>
+    </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<StackLayout class="page__content">
+    <div class = "GoldMsg">
+
+        <label [text] = "goldMsg"></label>
+        <Button class = "sending to server" text="refresh " (tap)="test()" ></Button>
+        <Button class = "Find Length" text="refresh " (tap)="length()" ></Button>
+    </div>
+
+    <div class = "CurrentEvent">
+        <label [text] = "currentEvent"></label>
+    </div>
+
+    <div class = "MissionStatement">
+        <label [text] = "missionStatement"></label>
+    </div>
+
+    <div class = "sponsors">
+        <label [text] = "sponsors"></label>
+    </div>
+</StackLayout>
+

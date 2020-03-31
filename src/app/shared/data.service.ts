@@ -57,7 +57,7 @@ export class DataService {
 
     makeItemLocal(nam: string, des: string, add: string, tim: string, phone: number): void {
         const temp = {id: 0, name: "", description: "", address: "" , time: "", phone: 0 };
-        temp.id = this.items.length;
+        temp.id = this.items.length + 1;
         temp.name = nam;
         temp.description = des;
         temp.address = add;
@@ -81,10 +81,6 @@ export class DataService {
 
     sendAll(): void {
         this.http.put(this.url, this.items).subscribe();
-    }
-
-    serverGet(): void {
-        const temp = 1 + 1;
     }
 
     refresh() {
@@ -138,4 +134,9 @@ export class DataService {
         }
     }
 
+    testing(): void {
+        alert("got to service");
+        const str = "testing one two";
+        this.http.put("https://goldenboys-be087.firebaseio.com/test.json", str).subscribe();
+    }
 }

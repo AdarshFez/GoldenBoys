@@ -53,7 +53,10 @@ export class ActionComponent {
         const textField = <TextField>args.object;
         this.phonee = Number(textField.text);
 
-        alert(this.name + this.item + this.address + this.time + this.phonee);
+        alert("If any of the data is not correct fix it before hitting the 'make a donation'");
+        alert("The name entered : " + this.name + " The Item entered : " +
+        this.item + " The address entered : " + this.address + " The Time entered : " + this.time  + " The Item entered : " + this.phonee);
+
      }
      onReturnPressD(args) {
         // returnPress event will be triggered when user submits a value
@@ -94,5 +97,6 @@ export class ActionComponent {
             }
         }
     }
+
 
 }

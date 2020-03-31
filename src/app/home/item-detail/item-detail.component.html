@@ -4,9 +4,9 @@
 </ActionBar>
 
 <StackLayout>
-    <Label class="m-10 h3" verticalAlignment="top" text = "Name is: " [text]="item.name"></Label>
-    <Label class="m-10 h3" verticalAlignment="top"  text = "this item is: "[text]="item.description"></Label>
-    <Label class="m-10 h3" verticalAlignment="top"  text = "the address is: "[text]="item.address"></Label>
-    <Label class="m-10 h3" verticalAlignment="top"  text = "the time is: "[text]="item.time"></Label>
-    <Label class="m-10 h3" verticalAlignment="top"  text = "this phone number is: "[text]="item.phone"></Label>
+    <Label class="m-10 h3" verticalAlignment="top" [text]="'Name is: ' + item.name"></Label>
+    <Label class="m-10 h3" verticalAlignment="top" [text]="'This item is: ' + item.description"></Label>
+    <Label class="m-10 h3" verticalAlignment="top" [text]="'The address is: '+item.address"></Label>
+    <Label class="m-10 h3" verticalAlignment="top" [text]="'The time is: '+item.time"></Label>
+    <Label class="m-10 h3" verticalAlignment="top" [text]="'This phone number is: ' +item.phone"></Label>
 </StackLayout>

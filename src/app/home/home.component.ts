@@ -23,4 +23,6 @@ export class HomeComponent implements OnInit {
         this._itemService.onGetData();
         this.items = this._itemService.getItems();
     }
+
+
 }
