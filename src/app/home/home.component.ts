@@ -6,8 +6,8 @@ import { ActionComponent } from "../action/action.component";
 
 @Component({
     selector: "Home",
-    templateUrl: "./home.component.html",
-    styleUrls: ["./home.component.css"]
+    templateUrl: "./home.component.html"
+    //styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
     items: Array<DataItem>;

@@ -1,6 +1,7 @@
 <ActionBar title="topmost">
     <GridLayout>
-    <Label text="Good as Gold"></Label>
+    <!-- <Label text="Good as Gold"></Label> -->
+    <Label class = title text="Good as Gold"></Label>
         <FlexboxLayout>
             <Button text="actions" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
             <Button class = "refresh" text="refresh " (tap)="refresh()" ></Button>
@@ -9,23 +10,24 @@
 </ActionBar>
 
 <StackLayout class="page__content">
+    <!-- <Button class = "Find Length" text="refresh " (tap)="length()" ></Button> -->
+    <!-- Button class = "sending to server" text="refresh " (tap)="test()" ></Button> -->
     <div class = "GoldMsg">
 
-        <label [text] = "goldMsg"></label>
-        <Button class = "sending to server" text="refresh " (tap)="test()" ></Button>
-        <Button class = "Find Length" text="refresh " (tap)="length()" ></Button>
+        <label class = ff [text] = "goldMsg" textWrap = "true"></label>
+
     </div>
 
     <div class = "CurrentEvent">
-        <label [text] = "currentEvent"></label>
+        <label class = ff [text] = "currentEvent" textWrap = "true"></label>
     </div>
 
     <div class = "MissionStatement">
-        <label [text] = "missionStatement"></label>
+        <label class = ff [text] = "missionStatement" textWrap = "true"></label>
     </div>
 
     <div class = "sponsors">
-        <label [text] = "sponsors"></label>
+        <label class = ff [text] = "sponsors" textWrap = "true"></label>
     </div>
 </StackLayout>
 
