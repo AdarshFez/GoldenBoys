@@ -2,8 +2,8 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NSEmptyOutletComponent } from "nativescript-angular";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { ActionComponent } from "./action/action.component";
-
+// //profileTab:profile/default
+// "/(homeTab:home/default//browseTab:browse/default//searchTab:search/default)"
 const routes: Routes = [
     {
         path: "",
@@ -28,6 +28,12 @@ const routes: Routes = [
         component: NSEmptyOutletComponent,
         loadChildren: () => import("~/app/search/search.module").then((m) => m.SearchModule),
         outlet: "searchTab"
+    },
+    {
+        path: "profile",
+        component: NSEmptyOutletComponent,
+        loadChildren: () => import("~/app/auth/auth.module").then((m) => m.AuthModule),
+        outlet: "profileTab"
     }
 ];
 
