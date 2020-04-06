@@ -7,8 +7,8 @@ import { TextField } from "tns-core-modules/ui/text-field";
 
 @Component({
     selector: "actionIt",
-    templateUrl: "./action.component.html",
-    styleUrls: ["./action.component.css"]
+    templateUrl: "./action.component.html"
+    //styleUrls: ["./action.component.css"]
 })
 export class ActionComponent {
 

@@ -4,8 +4,8 @@ import { MsgService } from "../shared/notes.service";
 
 @Component({
     selector: "Browse",
-    templateUrl: "./browse.component.html",
-    styleUrls: ["./browse.component.css"]
+    templateUrl: "./browse.component.html"
+    //styleUrls: ["./browse.component.css"]
 })
 export class BrowseComponent implements OnInit {
 
