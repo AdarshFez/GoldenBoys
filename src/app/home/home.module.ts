@@ -5,7 +5,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
 import { ItemDetailComponent } from "./item-detail/item-detail.component";
 import { ActionComponent } from "../action/action.component";
-import { ActionModule } from "../action/action.module";
+import { LoginComponent } from "../login/login.component";
+
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { ActionModule } from "../action/action.module";
     declarations: [
         HomeComponent,
         ItemDetailComponent,
-        ActionComponent
+        ActionComponent,
+        LoginComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
