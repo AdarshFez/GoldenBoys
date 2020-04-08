@@ -16,8 +16,6 @@ export class BrowseComponent implements OnInit {
 
     constructor(private service: MsgService) { }
 
-
-
     ngOnInit(): void {
         this.service.onGetData();
         // this.goldMsg = this.service.getData(0);

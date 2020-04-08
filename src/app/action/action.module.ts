@@ -6,6 +6,7 @@ import { ActionComponent } from "./action.component";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { DataService } from "../shared/data.service";
 import { HomeComponent } from "../home/home.component";
+import { GlobalComponent } from "../globals/global.component";
 
 @NgModule({
     imports: [
@@ -14,7 +15,7 @@ import { HomeComponent } from "../home/home.component";
         RouterExtensions
     ],
     declarations: [
-        ActionComponent, DataService, HomeComponent
+        ActionComponent, DataService, HomeComponent, GlobalComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
