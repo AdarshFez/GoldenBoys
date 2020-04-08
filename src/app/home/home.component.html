@@ -5,21 +5,12 @@
         <FlexboxLayout>
             <Button text="actions" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
             <Button class = "refresh" text="refresh " (tap)="refreshItems()" ></Button>
-            <Button text= "login" [nsRouterLink]="['../login']" pageTransition="slide" ></Button>
+            <!-- <Button text= "login" [nsRouterLink]="['../login']" pageTransition="slide" ></Button> -->
         </FlexboxLayout>
     </GridLayout>
 
 </ActionBar>
 
-<!-- <GridLayout>
-    <ListView [items]="items">
-        <ng-template let-item="item">
-            <StackLayout>
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
-            </StackLayout>
-        </ng-template>
-    </ListView>
-</GridLayout> -->
 
 <GridLayout class = "itemHolder">
     <ListView [items]="items">
