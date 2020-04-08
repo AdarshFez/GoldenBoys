@@ -22,12 +22,13 @@ export class AuthService {
   signUp(email: string, password: string) {
     this.http
       .post(
-        `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${FIREBASE_API_KEY}`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]`,
         { email, password, returnSecureToken: true }
       )
       .subscribe((resData) => {
         console.log(resData);
       });
+    alert("sent the request");
   }
 
   login(email: string, password: string) {}

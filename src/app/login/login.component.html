@@ -17,7 +17,9 @@
       [autocorrect]="false"
       autocapitalizationType="none"
       formControlName="email"
-      #emailEl
+      [text]="email"
+      (returnPress)="onReturnPressE($event)"
+
     ></TextField>
     <Label
       *ngIf="!emailControlIsValid"
@@ -38,8 +40,8 @@
       [secure]="true"
       hint="Min 6 characters"
       formControlName="password"
-      (returnPress)="onDone()"
-      #passwordEl
+      (returnPress)="onReturnPressP($event)"
+
     ></TextField>
     <Label
       *ngIf="!passwordControlIsValid"
@@ -55,6 +57,10 @@
     [text]="isLogin ? 'Login' : 'Signup'"
     class="btn btn-primary btn-rounded-lg"
     (tap)="onSubmit()"
-    [isEnabled]="form.valid"
+    [isEnabled]="true"
+
   ></Button>
 </StackLayout>
+
+<!-- "form.valid"  -->
+<!-- #emailEl -->

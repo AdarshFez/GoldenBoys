@@ -8,28 +8,30 @@ import { AuthService } from "./login.service";
 
 @Injectable()
 export class AuthGuard implements CanLoad {
-  constructor(
-    private authService: AuthService,
-    private router: RouterExtensions
-  ) {}
+//   constructor(
+//     private authService: AuthService,
+//     private router: RouterExtensions
+//   ) {}
 
-  canLoad(
-    route: Route,
-    segments: UrlSegment[]
-  ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.authService.user.pipe(
-      take(1),
-      switchMap(currentUser => {
-        if (!currentUser || !currentUser.token) {
-          return this.authService.autoLogin();
-        }
-        return of(true);
-      }),
-      tap(isAuth => {
-        if (!isAuth) {
-          this.router.navigate(["/auth"]);
-        }
-      })
-    );
+  canLoad() {
+      return true;
   }
+//     route: Route,
+//     segments: UrlSegment[]
+//   ): Observable<boolean> | Promise<boolean> | boolean {
+//     return this.authService.user.pipe(
+//       take(1),
+//       switchMap(currentUser => {
+//         if (!currentUser || !currentUser.token) {
+//           return this.authService.autoLogin();
+//         }
+//         return of(true);
+//       }),
+//       tap(isAuth => {
+//         if (!isAuth) {
+//           this.router.navigate(["/auth"]);
+//         }
+//       })
+//     );
+//   }
 }

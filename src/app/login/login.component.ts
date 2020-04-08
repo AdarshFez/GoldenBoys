@@ -7,10 +7,12 @@ import { AuthService } from "./login.service";
 
 @Component({
     selector: "login",
-    templateUrl: "./login.component.html",
-    styleUrls: ["./login.component.css"]
+    templateUrl: "./login.component.html"
+   //styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+    email = "saywhat";
+    password = "";
     form: FormGroup;
     emailControlIsValid = true;
     passwordControlIsValid = true;
@@ -21,38 +23,34 @@ export class LoginComponent implements OnInit {
     constructor(private router: RouterExtensions, private authService: AuthService) {}
 
     ngOnInit() {
-    this.form = new FormGroup({
-      email: new FormControl(null, {
-        updateOn: "blur",
-        validators: [Validators.required, Validators.email]
-      }),
-      password: new FormControl(null, {
-        updateOn: "blur",
-        validators: [Validators.required, Validators.minLength(6)]
-      })
-    });
-
-    this.form.get("email").statusChanges.subscribe(status => {
-      this.emailControlIsValid = status === "VALID";
-    });
-
-    this.form.get("password").statusChanges.subscribe(status => {
-      this.passwordControlIsValid = status === "VALID";
-    });
+        this.email = "Enter your email here";
+        this.password = "Enter password here";
   }
 
-    onSubmit() {
-    this.emailEl.nativeElement.focus();
-    this.passwordEl.nativeElement.focus();
-    this.passwordEl.nativeElement.dismissSoftInput();
-
-    if (!this.form.valid) {
-      return;
+    onReturnPressE(args) {
+    // returnPress event will be triggered when user submits a value
+        const textField = <TextField>args.object;
+        this.email = textField.text;
+        alert(this.email);
+    }
+    onReturnPressP(args) {
+        // returnPress event will be triggered when user submits a value
+        const textField = <TextField>args.object;
+        this.password = textField.text;
+        alert(this.password);
     }
 
-    const email = this.form.get("email").value;
-    const password = this.form.get("password").value;
-    this.form.reset();
+    onSubmit() {
+    // this.emailEl.nativeElement.focus();
+    // this.passwordEl.nativeElement.focus();
+    // this.passwordEl.nativeElement.dismissSoftInput();
+
+    // if (!this.form.valid) {
+    //   return;
+    // }
+    const email = this.email;
+    const password = this.password;
+    alert(email + password);
     this.emailControlIsValid = true;
     this.passwordControlIsValid = true;
     if (this.isLogin) {
@@ -60,13 +58,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.authService.signUp(email, password);
     }
-    this.router.navigate(["/challenges"]);
-  }
-
-    onDone() {
-    this.emailEl.nativeElement.focus();
-    this.passwordEl.nativeElement.focus();
-    this.passwordEl.nativeElement.dismissSoftInput();
+    alert("you are logged in");
+    //this.router.navigate(["/challenges"]);
   }
 
     onSwitch() {
