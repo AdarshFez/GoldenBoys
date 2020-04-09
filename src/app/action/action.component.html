@@ -3,6 +3,7 @@
     <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
 <StackLayout>
+       <div class = "cont">
     <label text = "Enter name Here then hit done"></label>
     <TextField hint="Enter name"
            [text]='name'
@@ -38,13 +39,18 @@
            returnKeyType="done"
            (returnPress)="onReturnPressP($event)"
     ></TextField>
-
-       <!-- <Button text="Alert" (tap)="myfun()" ></Button> -->
-       <!-- <Button text="Local Size " (tap)="localsize()" ></Button> -->
-       <!-- <Button text="Temp Size " (tap)="onRefreshtemp()" ></Button> -->
        <Button text="Make a new Donation" (tap)="local()" ></Button>
        <Button text="Sync with DataBase" (tap)="onSend()" ></Button>
+       </div>
 
+
+       <label text = "Admin is off, enter admin password to view more details"></label>
+        <TextField hint="Enter admin password here then hit done"
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressPas($event)"
+        ></TextField>
+       <div *ngIf="admin">
        <label text = "Enter Number you want deleted here" ></label>
        <TextField hint="Enter Number you want deleted here"
            [text]='deleteNum'
@@ -57,7 +63,7 @@
        <Button text = 'press to delete the number entered' (tap)="delete()" ></Button>
 
        <label text = "Hit sync after any changes" ></label>
-
+       </div>
 <!-- <Button text="Refresh List " (tap)="onRefresh()" ></Button> -->
 <!-- help -->
 </StackLayout>

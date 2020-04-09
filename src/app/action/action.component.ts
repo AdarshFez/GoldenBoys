@@ -4,6 +4,7 @@ import { DataService } from "../shared/data.service";
 import { DataItem } from "../shared/data.supply";
 import { RouterExtensions } from "nativescript-angular/router";
 import { TextField } from "tns-core-modules/ui/text-field";
+import { GlobalService } from "../globals/global.service";
 
 @Component({
     selector: "actionIt",
@@ -19,10 +20,16 @@ export class ActionComponent {
      phonee = 0;
      deleteNum = 0;
      nim = 0;
+     admin = false;
+     dialogOpen = true;
 
      private _routerExtensions: RouterExtensions;
 
-     constructor(private service: DataService) { }
+     constructor(
+         private service: DataService,
+         private _globals: GlobalService
+
+        ) { }
 
      onBackTap(): void {
         this._routerExtensions.back();
@@ -63,6 +70,18 @@ export class ActionComponent {
         const textField = <TextField>args.object;
         this.deleteNum = Number(textField.text);
      }
+     onReturnPressPas(args) {
+        // returnPress event will be triggered when user submits a value
+        const textField = <TextField>args.object;
+        const password = textField.text;
+        if (this._globals.isMatch(password)){
+            this._globals.setAdmin();
+            this.admin = this._globals.isAdmin();
+            alert("you are now an admin" + this.admin);
+        } else {
+            alert ("sorry wrong password");
+        }
+     }
         // sends everything
      onSend() {
         this.service.sendAll();
@@ -97,6 +116,14 @@ export class ActionComponent {
             }
         }
     }
+
+     showDialog() {
+        this.dialogOpen = true;
+      }
+
+     closeDialog() {
+        this.dialogOpen = false;
+      }
 
 
 }

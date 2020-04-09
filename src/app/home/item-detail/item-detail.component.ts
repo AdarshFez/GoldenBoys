@@ -4,7 +4,8 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 import { DataService } from "../../shared/data.service";
 import { DataItem } from "../../shared/data.supply";
-import { GlobalComponent } from "~/app/globals/global.component";
+import { GlobalService } from "../../globals/global.service";
+import { TextField } from "tns-core-modules/ui/text-field";
 @Component({
     selector: "ItemDetail",
     templateUrl: "./item-detail.component.html"
@@ -16,7 +17,8 @@ export class ItemDetailComponent implements OnInit {
     constructor(
         private _data: DataService,
         private _route: ActivatedRoute,
-        private _routerExtensions: RouterExtensions
+        private _routerExtensions: RouterExtensions,
+        private _globals: GlobalService
     ) { }
 
     ngOnInit(): void {
@@ -33,7 +35,25 @@ export class ItemDetailComponent implements OnInit {
     }
 
     checkAdmin(): boolean {
-        this.admin = this.getAdmin();
+        this.admin = this._globals.isAdmin();
         return this.admin;
+
     }
+
+    becAdmin() {
+        this._globals.setAdmin();
+        this.admin = this._globals.isAdmin();
+        alert("you are now an admin" + this.admin);
+    }
+
+    onReturnPressP(args) {
+        // returnPress event will be triggered when user submits a value
+        const textField = <TextField>args.object;
+        const password = textField.text;
+        if(this._globals.isMatch(password)){
+            this.becAdmin();
+        } else {
+            alert ("sorry wrong password");
+        }
+     }
 }

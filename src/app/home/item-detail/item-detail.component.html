@@ -4,9 +4,23 @@
 </ActionBar>
 
 <StackLayout>
-    <Label class="m-10 h3" verticalAlignment="top" [text]="'Name is: ' + item.name"></Label>
-    <Label class="m-10 h3" verticalAlignment="top" [text]="'This item is: ' + item.description"></Label>
-    <Label class="m-10 h3" verticalAlignment="top" [text]="'The address is: '+item.address"></Label>
-    <Label class="m-10 h3" verticalAlignment="top" [text]="'The time is: '+item.time"></Label>
-    <Label class="m-10 h3" verticalAlignment="top" [text]="'This phone number is: ' +item.phone"></Label>
+
+    <div *ngIf="admin; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <Label class="m-10 h3" verticalAlignment="top" [text]="'Name is: ' + item.name"></Label>
+        <Label class="m-10 h3" verticalAlignment="top" [text]="'This item is: ' + item.description"></Label>
+        <Label class="m-10 h3" verticalAlignment="top" [text]="'The address is: '+item.address"></Label>
+        <Label class="m-10 h3" verticalAlignment="top" [text]="'The time is: '+item.time"></Label>
+        <Label class="m-10 h3" verticalAlignment="top" [text]="'This phone number is: ' +item.phone"></Label>
+        <label text = "admin is on"></label>
+    </ng-template>
+    <ng-template #elseBlock>
+        <Label class="m-10 h3" verticalAlignment="top" [text]="'This item is: ' + item.description"></Label>
+        <label text = "Admin is off, enter admin password to view more details"></label>
+        <TextField hint="Enter admin password here then hit done"
+           keyboardType="datetime"
+           returnKeyType="done"
+           (returnPress)="onReturnPressP($event)"
+        ></TextField>
+    </ng-template>
 </StackLayout>
