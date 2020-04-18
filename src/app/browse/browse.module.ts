@@ -5,6 +5,7 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 import { BrowseComponent } from "./browse.component";
 import { MsgService } from "../shared/notes.service";
+import { ActionComponent } from "../action/action.component";
 
 @NgModule({
     imports: [
@@ -29,4 +30,3 @@ import { MsgService } from "../shared/notes.service";
     ]
 })
 export class BrowseModule { }
-

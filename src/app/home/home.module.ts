@@ -1,11 +1,12 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA, ErrorHandler, NgModuleFactoryLoader } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NativeScriptRouterModule, NSModuleFactoryLoader } from "nativescript-angular/router";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 import { HomeComponent } from "./home.component";
 import { ItemDetailComponent } from "./item-detail/item-detail.component";
 import { ActionComponent } from "../action/action.component";
+import { DataService } from "../shared/data.service";
 // import { ActionModule } from "../action/action.module";
 
 @NgModule({
@@ -19,6 +20,11 @@ import { ActionComponent } from "../action/action.component";
             { path: "item/:id", component: ItemDetailComponent },
             { path: "action", component: ActionComponent }
         ])
+    ],
+    providers: [
+        DataService,
+        { provide: ErrorHandler},
+        { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
     ],
     declarations: [
         HomeComponent,
