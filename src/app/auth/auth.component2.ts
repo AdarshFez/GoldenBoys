@@ -31,7 +31,7 @@ export class AuthComponent implements OnInit {
         updateOn: "blur",
         validators: [Validators.required, Validators.minLength(6)]
       })
-    };
+    });
 
     this.form.get("email").statusChanges.subscribe((status) => {
       this.emailControlIsValid = status === "VALID";

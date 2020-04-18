@@ -1,0 +1,66 @@
+<!-- <BottomNavigation>
+    <TabStrip iosIconRenderingMode="alwaysOriginal">
+
+        <TabStripItem>
+            <Label text="Players Tab"></Label>
+            <Image src="font://&#xf007;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem>
+            <Label text="Teams Tab"></Label>
+            <Image src="font://&#xf0c0;" class="fas t-36"></Image>
+        </TabStripItem>
+
+    </TabStrip>
+
+    <TabContentItem>
+        <page-router-outlet name="playerTab" actionBarVisibility="never"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="teamTab" actionBarVisibility="never"></page-router-outlet>
+    </TabContentItem>
+
+</BottomNavigation> -->
+
+<BottomNavigation>
+    <TabStrip>
+
+        <TabStripItem class="navigation__item">
+            <Label text="Donations"></Label>
+            <Image src="font://&#xf015;" class="fas t-36"></Image>
+        </TabStripItem>
+
+        <TabStripItem class="navigation__item">
+            <Label text="Good as Gold"></Label>
+            <Image src="font://&#xf1ea;" class="far t-36"></Image>
+        </TabStripItem>
+
+        <TabStripItem class="navigation__item">
+            <Label text="Events"></Label>
+            <Image src="font://&#xf002;" class="fas t-36"></Image>
+        </TabStripItem>
+    </TabStrip>
+
+    <TabContentItem>
+        <page-router-outlet name="homeTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="browseTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="searchTab"></page-router-outlet>
+    </TabContentItem>
+</BottomNavigation>
+
+<!--
+                Note TabStripItem will only accept single Label and/or single Image elements that it
+                will "adopt"; any other layout elements you try to specify will be ignored
+-->
+<!-- <StackLayout>
+<label text = "hello from tabs"></label>
+<label text = "hello from tabs"></label>
+<label text = "hello from tabs"></label>
+<label text = "hello from tabs"></label>
+</StackLayout> -->

@@ -1,13 +1,11 @@
-<page-router-outlet actionBarVisibility="never"></page-router-outlet>
-
-<!-- <BottomNavigation>
+<BottomNavigation>
     <TabStrip>
-        <TabStripItem class="navigation__item"> -->
+        <TabStripItem class="navigation__item">
             <!--
                 Note TabStripItem will only accept single Label and/or single Image elements that it
                 will "adopt"; any other layout elements you try to specify will be ignored
             -->
-            <!-- <Label text="Donations"></Label>
+            <Label text="Donations"></Label>
             <Image src="font://&#xf015;" class="fas t-36"></Image>
         </TabStripItem>
 
@@ -23,7 +21,7 @@
     </TabStrip>
 
     <TabContentItem>
-        <page-router-outlet name="homeTab"></page-router-outlet>
+        <page-router-outlet name="homeTab" actionBarVisibility="never"></page-router-outlet>
     </TabContentItem>
 
     <TabContentItem>
@@ -33,11 +31,4 @@
     <TabContentItem>
         <page-router-outlet name="searchTab"></page-router-outlet>
     </TabContentItem>
-</BottomNavigation> -->
-
-
-<!-- <TabStrip>
-    <TabStripItem class="action">
-        <button text = "add"></button>
-    </TabStripItem>
-</TabStrip> -->
+</BottomNavigation>

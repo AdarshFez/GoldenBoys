@@ -9,17 +9,15 @@ import { MsgService } from "../shared/notes.service";
 })
 export class BrowseComponent implements OnInit {
 
-    goldMsg = " Press the Refresh Button for the current Messeges ";
-    currentEvent = "";
-    missionStatement = "";
-    sponsors = "";
+    // goldMsg = " Press the Refresh Button for the current Messeges ";
+    // currentEvent = "";
+    // missionStatement = "";
+    // sponsors = "";
 
-    constructor(private service: MsgService) { }
-
-
+    // constructor(private service: MsgService) { }
 
     ngOnInit(): void {
-        this.service.onGetData();
+        // this.service.onGetData();
         // this.goldMsg = this.service.getData(0);
         // this.currentEvent = this.service.getData(1);
         // this.missionStatement = this.service.getData(2);
@@ -27,19 +25,19 @@ export class BrowseComponent implements OnInit {
         // Use the "ngOnInit" handler to initialize data for the view.
     }
 
-    test() {
-        this.service.getData(0);
-    }
+    // test() {
+    //     this.service.getData(0);
+    // }
 
-    length() {
-        this.service.getL();
-    }
+    // length() {
+    //     this.service.getL();
+    // }
 
-    refresh() {
-        this.service.onGetData();
-        this.goldMsg = this.service.getData(0);
-        this.currentEvent = this.service.getData(1);
-        this.missionStatement = this.service.getData(2);
-        this.sponsors = this.service.getData(3);
-    }
+    // refresh() {
+    //     this.service.onGetData();
+    //     this.goldMsg = this.service.getData(0);
+    //     this.currentEvent = this.service.getData(1);
+    //     this.missionStatement = this.service.getData(2);
+    //     this.sponsors = this.service.getData(3);
+    // }
 }

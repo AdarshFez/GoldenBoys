@@ -1,10 +1,9 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
-import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
     bootstrap: [
@@ -12,12 +11,11 @@ import { AppComponent } from "./app.component";
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule,
-        NativeScriptHttpClientModule,
-        NativeScriptFormsModule
+        AppRoutingModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        LoginComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
