@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
-import { DataService } from "../../shared/data.service";
-import { DataItem } from "../../shared/data.supply";
+import { DataService } from "../shared/data.service";
+import { DataItem } from "../shared/data.supply";
 import { RouterExtensions } from "nativescript-angular/router";
 import { TextField } from "tns-core-modules/ui/text-field";
 
@@ -20,9 +20,12 @@ export class ActionComponent {
      deleteNum = 0;
      nim = 0;
 
-     private _routerExtensions: RouterExtensions;
 
-     constructor(private service: DataService) { }
+
+     constructor(
+         private service: DataService,
+         private _routerExtensions: RouterExtensions
+         ) { }
 
      onBackTap(): void {
         this._routerExtensions.back();

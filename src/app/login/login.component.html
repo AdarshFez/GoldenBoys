@@ -1,11 +1,59 @@
 <ActionBar>
-    <Label text="Login Component"></Label>
+    <Label text="Logged in Golden Boys!"></Label>
 </ActionBar>
-
+<!--
 <StackLayout>
     <Label text="Logged in GOlden BOys!"></Label>
     <Label text="Logged in!"></Label>
     <Button text="Go To Tabs Page" (tap) = "toTabs()"></Button>
-</StackLayout>
+</StackLayout> -->
 
 <!-- [nsRouterLink]="['/tabs']" -->
+<Label text="Golden Boys!"></Label>
+<Label [text]="isLogin ? 'Login' : 'Signup'"></Label>
+<FlexboxLayout class = "form">
+<StackLayout class = "form" [formGroup]="form">
+    <Label class ="label"
+     [ngClass]="{ invald: emailControlIsValid }"
+    ></Label>
+    <!-- Email Login -->
+    <TextField hint="Enter Email"
+           class ="input"
+           keyboardType="Email"
+           returnKeyType="next"
+           [autocorrect]="false"
+           autocapitalizationType="none"
+           formControlName="email"
+           #emailEL
+           >
+    </TextField>
+    <label *ngIf="!emailControlIsValid" text ="please enter a valid Email"></label>
+
+    <!-- Password entrery -->
+    <Label class ="label"
+     [ngClass]="{ invald: emailControlIsValid }"
+    ></Label>
+    <TextField hint="Enter Password with atleast 6 characters"
+           [text]=''
+           secure="false"
+           keyboardType="Email"
+           returnKeyType="done"
+           [autocorrect]="false"
+           [secure] ="true"
+           autocapitalizationType="none"
+           formControlName="password"
+           #passwordEL>
+    </TextField>
+
+    <label *ngIf="!passwordControlIsValid" text ="please enter a valid password that is 6 characters long"></label>
+    <!-- <label *ngIf="!passwordControlIsValid" text ="please enter a valid Email"></label> -->
+    <Button class ="btn btn-flat" [text]="isLogin ? 'Signup instead' : 'Login instead'" (tap) = "onSwitch()"></Button>
+
+    <Button [text]="isLogin ? 'Login' : 'Signup'" (tap) = "onSubmit()"
+    [isEnabled] ="form.valid"
+    *ngIf ="!isloading"
+    ></Button>
+    <ActivityIndicator [busy]="isloading"></ActivityIndicator>
+    <Button text="Tabs" (tap) = "toTabs()"></Button>
+</StackLayout>
+</FlexboxLayout>

@@ -5,7 +5,7 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 import { BrowseComponent } from "./browse.component";
 import { MsgService } from "../shared/notes.service";
-import { ActionComponent } from "../action/action.component";
+import { EditComponent } from "./edit/edit.component";
 
 @NgModule({
     imports: [
@@ -14,7 +14,8 @@ import { ActionComponent } from "../action/action.component";
         NativeScriptHttpClientModule,
         NativeScriptRouterModule.forChild([
             { path: "", redirectTo: "default" },
-            { path: "default", component: BrowseComponent}
+            { path: "default", component: BrowseComponent},
+            { path: "edit", component: EditComponent }
         ])
     ],
     providers: [
@@ -23,7 +24,7 @@ import { ActionComponent } from "../action/action.component";
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
     ],
     declarations: [
-        BrowseComponent
+        BrowseComponent, EditComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

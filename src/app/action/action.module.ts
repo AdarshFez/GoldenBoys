@@ -4,8 +4,8 @@ import { RouterExtensions } from "nativescript-angular/router";
 
 import { ActionComponent } from "./action.component";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
-import { DataService } from "../../shared/data.service";
-import { HomeComponent } from "../../home/home.component";
+import { DataService } from "../shared/data.service";
+import { HomeComponent } from "../home/home.component";
 
 @NgModule({
     imports: [

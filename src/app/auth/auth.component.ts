@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { RouterExtensions } from "nativescript-angular/router";
 import { TextField } from "tns-core-modules/ui/text-field";
 
-import { AuthService } from "./auth.service";
+import { LoginService } from "../login/login.service";
 
 @Component({
   selector: "ns-auth",
@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit {
 //   @ViewChild("passwordEl") passwordEl: ElementRef<TextField>;
 //   @ViewChild("emailEl") emailEl: ElementRef<TextField>;
 
-  constructor(private router: RouterExtensions, private authService: AuthService) {}
+  constructor(private router: RouterExtensions, private authService: LoginService) {}
 
   ngOnInit() {
     const t = 2;
