@@ -1,6 +1,33 @@
-<ActionBar>
+<ActionBar class = "title">
     <Label text="Edit Menu"></Label>
     <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
 
-<Button text="edit works!"></Button>
+<StackLayout class = "form" [formGroup]="form">
+
+    <label *ngIf="admin" text ="Welcome to the Edit Menu for the Messeges"></label>
+    <label *ngIf="!admin" text ="Sorry You are not an Admin, enter admin Password"></label>
+    <!-- Email Login -->
+    <button text= "are you admin" (tap) = "isAdmin()"></button>
+    <div *ngIf="admin">
+    <TextField
+
+           returnKeyType="done"
+    ></TextField>
+    <Button text="Tabs" ></Button>
+
+    <!-- Password entrery -->
+
+
+
+    <!-- <label *ngIf="!passwordControlIsValid" text ="please enter a valid Email"></label> -->
+    <TextField
+        class ="input"
+        returnKeyType="done"
+        [autocorrect] = "false"
+        #emailEL
+    ></TextField>
+
+    <Button text="admin" (tap) = "makeAdmin()" ></Button>
+    </div>
+</StackLayout>

@@ -1,10 +1,11 @@
 @import "~@nativescript/theme/core";
-@import "~@nativescript/theme/blue";
+@import '~@nativescript/theme/css/grey.css';
 
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 
 // Font icon class
+
 .fab {
     font-family: "Font Awesome 5 Brands", "fa-brands-400";
     font-weight: 400;
@@ -22,17 +23,19 @@
 
 // Custom tabstrip item class
 .navigation__item {
+    background-color: gold;
     &:active,
     &:active Label {
-        @include colorize($contrasted-color: complementary background 20% 0%);
+        color: black;
     }
 }
 
 // Common page class
 .page__content {
+    background-color:const(rgb(19, 22, 20));
     &-icon,
     &-placeholder {
-        color: const(grey);
+        color: const(rgb(23, 26, 24));
         font-size: 20;
         vertical-align: center;
     }
@@ -44,9 +47,36 @@
     }
 }
 
+.command {
+    background-color: gold;
+}
+
 .btn-flat {
-    background: transparent;
+    background-color: rgba(165, 163, 62, 0.726);
+    //background: transparent 20%;
     border-color: transparent;
     border-width: 1;
     color: $primary;
+}
+
+.title {
+    color: black;
+    background-color: gold;
+}
+
+.ng-invalid {
+    border-bottom: red;
+    color: red;
+}
+
+.label.invalid{
+    color: red;
+}
+
+.invalid {
+    color: red;
+}
+
+.input {
+    color: black;
 }

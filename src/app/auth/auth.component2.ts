@@ -58,7 +58,7 @@ export class AuthComponent implements OnInit {
        this.emailControlIsValid = true;
        this.passwordControlIsValid = true;
        if (this.isLogin) {
-      console.log("Logging in...");
+       //console.log("Logging in...");
     } else {
       this.authService.signUp(email, password);
     }

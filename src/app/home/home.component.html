@@ -1,11 +1,12 @@
-<ActionBar title="topmost">
-    <GridLayout>
-    <Label text="Donations"></Label>
-        <FlexboxLayout>
-            <Button text="actions" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
-            <Button class = "refresh" text="refresh " (tap)="refreshItems()" ></Button>
+<ActionBar class = "title">
+    <!-- <GridLayout> -->
+
+        <FlexboxLayout class = "but">
+            <Button class = "command" text="Options" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
+            <Label text="Donations"></Label>
+            <Button class = "command" text="refresh " (tap)="refreshItems()" ></Button>
         </FlexboxLayout>
-    </GridLayout>
+    <!-- </GridLayout> -->
 
 </ActionBar>
 
@@ -20,7 +21,7 @@
     This is not used, for example
 </GridLayout> -->
 
-<GridLayout class = "itemHolder">
+<GridLayout class = "page__content">
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>

@@ -6,11 +6,15 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { BrowseComponent } from "./browse.component";
 import { MsgService } from "../shared/notes.service";
 import { EditComponent } from "./edit/edit.component";
+import { GlobalService } from "../globals/global.service";
+import { fromEventPattern } from "rxjs";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
         NativeScriptRouterModule,
+        CommonModule,
         NativeScriptHttpClientModule,
         NativeScriptRouterModule.forChild([
             { path: "", redirectTo: "default" },
@@ -20,6 +24,7 @@ import { EditComponent } from "./edit/edit.component";
     ],
     providers: [
         MsgService,
+        GlobalService,
         { provide: ErrorHandler},
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
     ],

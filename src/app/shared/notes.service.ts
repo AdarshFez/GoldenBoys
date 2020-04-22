@@ -8,7 +8,6 @@ import { catchError, map, tap } from "rxjs/operators";
     providedIn: "root"
 })
 export class MsgService {
-
     private url = "https://goldenboys-be087.firebaseio.com/msg.json";
     private msg = new Array<string>();
     private arr: Array<string> = new Array();

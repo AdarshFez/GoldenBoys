@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { MsgService } from "../shared/notes.service";
+import { GlobalService } from "../globals/global.service";
 
 @Component({
     selector: "Browse",
@@ -14,15 +15,51 @@ export class BrowseComponent implements OnInit {
     missionStatement = "";
     sponsors = "";
 
-    constructor(private service: MsgService) { }
+    constructor(private service: MsgService , private glob: GlobalService) { }
 
     ngOnInit(): void {
         this.service.onGetData();
-        this.goldMsg = this.service.getData(0);
-        this.currentEvent = this.service.getData(1);
-        this.missionStatement = this.service.getData(2);
-        this.sponsors = this.service.getData(3);
+        this.glob.setGold(this.service.getData(0));
+        this.glob.setCur(this.service.getData(1));
+        this.glob.setMis(this.service.getData(2));
+        this.glob.setSpon(this.service.getData(3));
+        this.goldMsg = this.glob.getGold();
+        this.currentEvent = this.glob.getCur();
+        this.missionStatement = this.glob.getMis();
+        this.sponsors = this.glob.getSpon();
         // Use the "ngOnInit" handler to initialize data for the view.
+    }
+
+    getGold() {
+        return this.goldMsg;
+    }
+
+    setGold(mms: string) {
+        this.goldMsg = mms;
+    }
+
+    getCur() {
+        return this.currentEvent;
+    }
+
+    setCur(mms: string) {
+        this.currentEvent = mms;
+    }
+
+    getMis() {
+        return this.missionStatement;
+    }
+
+    setMis(mms: string) {
+        this.missionStatement = mms;
+    }
+
+    getSpon() {
+        return this.sponsors;
+    }
+
+    setSpon(mms: string){
+        this.sponsors = mms;
     }
 
     test() {

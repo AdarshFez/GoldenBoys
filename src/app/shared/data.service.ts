@@ -55,7 +55,7 @@ export class DataService {
         return this.items.filter((item) => item.id === id)[0];
     }
 
-    makeItemLocal(nam: string, des: string, add: string, tim: string, phone: number): void {
+    makeItemLocal(nam: string, des: string, add: string, tim: string, phone: number) {
         const temp = {id: 0, name: "", description: "", address: "" , time: "", phone: 0 };
         temp.id = this.items.length + 1;
         temp.name = nam;

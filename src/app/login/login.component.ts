@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TextField } from "tns-core-modules/ui/text-field/text-field";
 
 import { LoginService } from "./login.service";
+import { GlobalService } from "../globals/global.service";
 
 @Component({
   moduleId: module.id,
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
     @ViewChild("emailEL", null) emailEL: ElementRef <TextField>;
     @ViewChild("passwordEL", null) passwordEL: ElementRef <TextField>;
 
-    constructor(private routerExtension: RouterExtensions, private loginService: LoginService)  { }
+    constructor(private routerExtension: RouterExtensions, private loginService: LoginService,
+                private glob: GlobalService)  { }
 
     ngOnInit(): void {
         this.form = new FormGroup({
@@ -39,6 +41,7 @@ export class LoginComponent implements OnInit {
         this.form.get("password").statusChanges.subscribe((status) => {
             this.passwordControlIsValid = status === "VALID";
         });
+        this.glob.getAdmin();
     }
 
     toTabs() {
@@ -59,26 +62,39 @@ export class LoginComponent implements OnInit {
         }
         const email = this.form.get("email").value;
         const password = this.form.get("password").value;
-        //this.form.reset();
+        // this.form.reset();
         this.emailControlIsValid = true;
         this.passwordControlIsValid = true;
         this.isLoading = true;
-        if (this.isLogin){
+
+        if (this.isLogin) {
             this.loginService.logIn(email, password)
             .subscribe((resData) => {
+                this.glob.getAdmin();
+                this.glob.setAdmin(email);
                 this.isLoading = false;
                 this.routerExtension.navigate(["../tabs"], { clearHistory: true });
             }, (err) => {
-                alert("Please Check log-in info")
-                console.log(err);
+                // alert("Please Check log-in info")
+                // console.log(err);
                 this.isLoading = false;
+
             });
         } else {
-
             this.loginService.signUp(email, password).subscribe((resData) => {
+                this.isLoading = false;
+                alert("Account Created");
+
+            }, (err) => {
+                // alert("Please Check log-in info")
+                // console.log(err);
                 this.isLoading = false;
             });
         }
-        //alert(email + password);
+        // alert(email + password);
+    }
+
+    getAdmin() {
+        this.glob.getAdmin();
     }
 }
