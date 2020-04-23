@@ -1,0 +1,9 @@
+/* Add mobile styles for the component here.  */
+.title {
+    color: black;
+    background-color: gold;
+}
+
+.form {
+    background-color: lightgray;
+}
