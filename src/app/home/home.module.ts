@@ -2,10 +2,12 @@ import { NgModule, NO_ERRORS_SCHEMA, ErrorHandler, NgModuleFactoryLoader } from 
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptRouterModule, NSModuleFactoryLoader } from "nativescript-angular/router";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { HomeComponent } from "./home.component";
 import { ItemDetailComponent } from "./item-detail/item-detail.component";
-import { ActionComponent } from "../action/action.component";
+import { ActionComponent } from "./action/action.component";
 import { DataService } from "../shared/data.service";
 
 // import { ActionModule } from "../action/action.module";
@@ -15,6 +17,8 @@ import { DataService } from "../shared/data.service";
         NativeScriptCommonModule,
         NativeScriptRouterModule,
         NativeScriptHttpClientModule,
+        NativeScriptFormsModule,
+        ReactiveFormsModule,
         NativeScriptRouterModule.forChild([
             { path: "", redirectTo: "default" },
             { path: "default", component: HomeComponent },

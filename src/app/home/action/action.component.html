@@ -1,0 +1,88 @@
+<ActionBar>
+       <Label text="Action Menu"></Label>
+       <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+   </ActionBar>
+   <StackLayout class = "Questions" [formGroup]="form">
+          <StackLayout class = "adding" [formGroup]="form">
+                   <Label class ="label" [[ngClass]="{invalid: nameControlValid }"]></Label>
+                   <TextField
+                        hint="Enter name here"
+                        class = "input"
+                        returnKeyType="next"
+                        required
+                        formControlName="name"
+                        #nameEL
+                   ></TextField>
+                   <label *ngIf="!nameControlValid" text ="please enter a valid Email"></label>
+
+                   <Label class ="label"
+                       [ngClass]="{ invald: itemControlValid }"
+                   ></Label>
+                   <TextField
+                        hint="Enter item here"
+                        class = "input"
+                        returnKeyType="next"
+                        formControlName="item"
+                        #itemEL
+                   ></TextField>
+                   <label *ngIf="!itemControlValid" text ="please enter a valid Email"></label>
+
+                   <Label class ="label"
+                       [ngClass]="{ invald: addressControlValid }"
+                   ></Label>
+                   <TextField
+                        hint="Enter address here"
+                        class = "input"
+                        returnKeyType="next"
+                        formControlName="address"
+                        #addressEL
+                   ></TextField>
+                   <label *ngIf="!addressControlValid" text ="please enter a valid Email"></label>
+
+                   <Label class ="label"
+                       [ngClass]="{ invald: timeControlValid }"
+                   ></Label>
+                   <TextField
+                        hint="Enter time and add Am or PM"
+                        class = "input"
+                        returnKeyType="next"
+                        formControlName="time"
+                        #timeEL
+                   ></TextField>
+                   <label *ngIf="!timeControlValid" text ="please enter a valid Email"></label>
+
+                   <Label class ="label"
+                       [ngClass]="{ invald: phoneControlValid }"
+                   ></Label>
+                   <TextField
+                        hint="Enter phone number as XXXXXXXXXX"
+                        class = "input"
+                        keyboardType="phone"
+                        returnKeyType="done"
+                        formControlName="phone"
+                        #phoneEL
+                   ></TextField>
+                   <label *ngIf="!phoneControlValid" text ="please enter a valid Email"></label>
+
+
+                 <Button text="Make a new Donation" (tap)="local()" ></Button>
+                 <Button text="All Set" (tap)="onSend()" ></Button>
+          </StackLayout>
+          <StackLayout class = "dele">
+          <label text = "Enter Number you want deleted here" ></label>
+          <TextField hint="Enter Number you want deleted here"
+              [text]='deleteNum'
+              keyboardType="datetime"
+              returnKeyType="done"
+              (returnPress)="onReturnPressD($event)"
+           ></TextField>
+
+
+          <Button text = 'press to delete the number entered' (tap)="delete()" ></Button>
+          </StackLayout>
+          <label text = "Hit sync after any changes" ></label>
+
+   <!-- <Button text="Refresh List " (tap)="onRefresh()" ></Button> -->
+   <!-- help -->
+   </StackLayout>
+
