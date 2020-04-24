@@ -84,7 +84,8 @@
 
 
                  <Button class = "butto" text="Make a new Donation" (tap)="local()" ></Button>
-                 <Button class = "butto" text="All Set" (tap)="onSend()" ></Button>
+                 <Button *ngIf = !notChanged class ="butto" text="Delete the Donation you just made" (tap) = "unLocal()"></Button>
+                 <Button class = "butto" [disabled] = !notChanged text="All Set" (tap)="onSend()" ></Button>
           </StackLayout>
           <StackLayout *ngIf="!dona" class = "dele">
             <label text = "Enter Number you want deleted here" ></label>

@@ -5,8 +5,8 @@
 
 
 .ff {
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     align-self: flex-end;
     align-items: center;
     border-width: 2px;
@@ -18,7 +18,7 @@
 
 .GoldMsg {
     padding-top: 30px;
-    padding-bottom: 150px;
+    padding-bottom: 10px;
     align-self: center;
     align-items: center;
     border-width: 2px;
@@ -32,13 +32,10 @@
 }
 
 
-.titleText {
-    color: black;
-    height: 20;
-}
+
 
 .header {
     text-align: center;
-    size: 100px;
-    padding-bottom: 100px;
+    font-weight: bold;
+    font-size: 14px;
 }

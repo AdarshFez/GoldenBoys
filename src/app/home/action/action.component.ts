@@ -18,6 +18,7 @@ export class ActionComponent implements OnInit {
 
      deleteNum = 0;
      nim = 0;
+     notChanged = true;
      form: FormGroup;
      dona = true;
      nameControlValid = true;
@@ -36,8 +37,8 @@ export class ActionComponent implements OnInit {
      minDate: Date = new Date(2020, 3, 23);
      maxDate: Date = new Date(2025, 4, 12);
      date = "";
-     month = "";
-     day = "0";
+     month = 4;
+     day = 23;
      year = 2020;
      error = "";
 
@@ -81,7 +82,11 @@ export class ActionComponent implements OnInit {
         }
 
      onBackTap(): void {
+        if (this.notChanged) {
         this._routerExtensions.back();
+        } else {
+            alert("sorry you made an item you have to sync to go back otherwise delete it")
+        }
     }
 
     //  onReturnPressN(args) {
@@ -100,6 +105,7 @@ export class ActionComponent implements OnInit {
         // sends everything
      onSend() {
         this.service.sendAll();
+        this.notChanged = !this.notChanged;
 
     // alert(email + password);
     }
@@ -116,11 +122,16 @@ export class ActionComponent implements OnInit {
 
         this.date = this.month + "/" + this.day + "/" + this.year;
 
-        const name = this.form.get("name").value;
-        const item = this.form.get("item").value;
-        const address = this.form.get("address").value;
-        const time = this.form.get("time").value;
-        const date = this.date;
+        const namee = this.form.get("name").value;
+        const name = " " + namee + " ";
+        const itemm = this.form.get("item").value;
+        const item = itemm.toString();
+        const addresss = this.form.get("address").value;
+        const address = addresss.toString();
+        const timee = this.form.get("time").value;
+        const time = timee.toString();
+        const datee = this.date;
+        const date = datee.toString();
         const phone = this.form.get("phone").value;
 
         console.log("the name : " + name + " The Item  : " +
@@ -142,13 +153,13 @@ export class ActionComponent implements OnInit {
         this.dateControlValid = true;
         this.itemControlValid = true;
 
-        if (isString(name)) {
-            if (isString(item)) {
-                if (isString(address)) {
-                    if (isString(time)) {
-                        if (isString(date)) {
+        if (isString(name) && this.notNumberCheck(name)) {
+            if (this.stringCheck(item) && this.notNumberCheck(item)) {
+                if (this.stringCheck(address) && this.notNumberCheck(address)) {
+                    if (this.stringCheck(time) && this.notNumberCheck(time)) {
+                        if (this.stringCheck(date) && this.notNumberCheck(date)) {
                             const phon: number = convertString(phone);
-                            if (isNumber(phon)) {
+                            if (!this.notNumberCheck(phon)) {
                                 this.error = "works";
                             } else {
                                 this.error = "phone";
@@ -170,19 +181,27 @@ export class ActionComponent implements OnInit {
 
         }
         if (this.error !== "works") {
-        alert("Check what you entered for" + this.error);
+        alert("Check what you entered for " + this.error);
 
         return;
         }
 
+        console.log(this.localsize());
         this.service.makeItemLocal(name, item, address, date, time, phone);
+        this.notChanged = false;
         alert("A Donations with the name : " + name + " The Item  : " +
         item + " The address  : " + address + "The date of: " + date + " The Time  : "
         + time  + " The Item  : " + phone + "if this looks good hit all set!" + "error" + this.error);
+        console.log(this.localsize());
     }
         // get local size
      localsize(): void {
-        this.service.localLength();
+        alert(this.service.localLength());
+    }
+
+     unLocal() {
+        this.service.delete(this.service.localLength());
+        this.notChanged = !this.notChanged;
     }
         // delete number you enter
      delete(): void {
@@ -201,6 +220,8 @@ export class ActionComponent implements OnInit {
             } else {
                 this.service.delete(this.service.getItemNum(this.deleteNum));
                 this.service.reorder();
+                this.notChanged = this.notChanged;
+
             }
         }
     }
@@ -229,9 +250,6 @@ export class ActionComponent implements OnInit {
         console.log(args.value);
     }
 
-     numberCheck(num: number) {
-        return true;
-    }
 
      onSwitch() {
          if (this.glob.isAdmin()) {
@@ -239,6 +257,28 @@ export class ActionComponent implements OnInit {
          } else {
              alert("Sorry Only admins can hit that button");
          }
+    }
+
+     notNumberCheck(num: any) {
+            const phon: number = convertString(num);
+            if (phon % 2 === 1 || num % 2 === 0) {
+                return false;
+            } else {
+                return true;
+        }
+    }
+
+     stringCheck(num: any): boolean {
+        if (isString(num)) {
+            //alert("string");
+
+            return true;
+        } else {
+
+            //alert("notString");
+
+            return false;
+        }
     }
 
 }

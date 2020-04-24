@@ -20,7 +20,7 @@ export class EditComponent implements OnInit {
     currentEvent = "";
     missionStatement = "";
     sponsors = "";
-    admin;
+    admin = false;
     @ViewChild("emailEL", null) emailEL: ElementRef <TextField>;
     constructor(private _routerExtensions: RouterExtensions, private glob: GlobalService) { }
 
@@ -44,20 +44,30 @@ export class EditComponent implements OnInit {
     }
 
 
-
     onBackTap(): void {
     //this._routerExtensions.back();
     this._routerExtensions.back();
+    this.admin = this.glob.isAdmin();
+    this.glob.checkUser();
   }
-
+    checkUser(){
+        this.glob.checkUser();
+    }
+    checkAgain(){
+        this.glob.checkAgain();
+    }
     makeAdmin() {
         this.emailEL.nativeElement.focus();
+        this.emailEL.nativeElement.dismissSoftInput();
+        console.log("made to admin");
         if (!this.form.valid) {
             return;
         }
+        console.log("made to admin 2");
         const email = this.form.get("email").value;
         //this.form.reset();
         this.emailControlIsValid = true;
+        alert(email);
         this.glob.makeAAdmin(email);
     }
 

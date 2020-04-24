@@ -71,7 +71,7 @@ export class DataService {
     }
 
     localLength() {
-        alert(this.items.length);
+        return this.items.length;
     }
 
     getItemNum(num: number): number {

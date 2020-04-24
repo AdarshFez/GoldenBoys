@@ -1,14 +1,18 @@
-<ActionBar class = "title">
-    <!-- <GridLayout> -->
 
+<ActionBar class = "title" >
+    <!-- <GridLayout> -->
+        <StackLayout class = top>
+        <Label class = titleText text="Donations"></Label>
         <FlexboxLayout class = "but">
             <Button class = "command" text="Options" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
-            <Label text="Donations"></Label>
             <Button class = "command" text="refresh " (tap)="refreshItems()" ></Button>
+            <Button class = "command" text="Log Out " [nsRouterLink]="['']"> </Button>
         </FlexboxLayout>
+    </StackLayout>
     <!-- </GridLayout> -->
 
 </ActionBar>
+
 
 <!-- <GridLayout>
     <ListView [items]="items">

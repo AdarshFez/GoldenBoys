@@ -2,19 +2,20 @@ import { NgModule, NO_ERRORS_SCHEMA, ErrorHandler, NgModuleFactoryLoader } from 
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptRouterModule, NSModuleFactoryLoader } from "nativescript-angular/router";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { ReactiveFormsModule } from "@angular/forms";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { BrowseComponent } from "./browse.component";
 import { MsgService } from "../shared/notes.service";
 import { EditComponent } from "./edit/edit.component";
-import { GlobalService } from "../globals/global.service";
 import { fromEventPattern } from "rxjs";
-import { CommonModule } from "@angular/common";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
         NativeScriptRouterModule,
-        CommonModule,
+        NativeScriptFormsModule,
+        ReactiveFormsModule,
         NativeScriptHttpClientModule,
         NativeScriptRouterModule.forChild([
             { path: "", redirectTo: "default" },
@@ -24,7 +25,6 @@ import { CommonModule } from "@angular/common";
     ],
     providers: [
         MsgService,
-        GlobalService,
         { provide: ErrorHandler},
         { provide: NgModuleFactoryLoader, useClass: NSModuleFactoryLoader }
     ],

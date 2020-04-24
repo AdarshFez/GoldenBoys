@@ -1,5 +1,6 @@
 <ActionBar class = "title">
     <!-- <GridLayout> -->
+
         <FlexboxLayout>
             <Button class = "command" text="Admin" [nsRouterLink]="['../edit']" pageTransition="slide" ></Button>
             <Label class = "titleText" text="Good as Gold"></Label>
@@ -8,7 +9,7 @@
     <!-- </GridLayout> -->
 </ActionBar>
 
-<StackLayout class="page__content">
+<StackLayout     class="page__content" >
     <!-- <Button class = "Find Length" text="refresh " (tap)="length()" ></Button>
     Button class = "sending to server" text="refresh " (tap)="test()" ></Button> -->
 
@@ -20,6 +21,8 @@
 
     <StackLayout class = ff>
         <label text = "Our Current Event" class = "header"></label>
+        <h1 text = "what"></h1>
+        <h3 text = "here"></h3>
         <label  [text] = "currentEvent" textWrap = "true"></label>
     </StackLayout>
 
@@ -33,5 +36,5 @@
         <label  [text] = "sponsors" textWrap = "true"></label>
     </StackLayout>
 
-</StackLayout>
+</StackLayout    >
 

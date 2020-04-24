@@ -9,25 +9,24 @@
     <label *ngIf="!admin" text ="Sorry You are not an Admin, enter admin Password"></label>
     <!-- Email Login -->
     <button text= "are you admin" (tap) = "isAdmin()"></button>
-    <div *ngIf="admin">
-    <TextField
+    <button text= "Check Again" (tap) = checkAgain();></button>
 
-           returnKeyType="done"
-    ></TextField>
-    <Button text="Tabs" ></Button>
-
-    <!-- Password entrery -->
-
-
-
-    <!-- <label *ngIf="!passwordControlIsValid" text ="please enter a valid Email"></label> -->
+    <StackLayout *ngIf="admin" class = "form1" [formGroup]="form">
+    <Label class ="label"
+        [ngClass]="{ invald: !emailControlIsValid }"
+    ></Label>
     <TextField
         class ="input"
         returnKeyType="done"
+        keyboardType="Email"
         [autocorrect] = "false"
+        autocapitalizationType="none"
+        formControlName="email"
         #emailEL
     ></TextField>
 
+    <label *ngIf="!emailControlIsValid" text ="please enter a valid Email"></label>
+
     <Button text="admin" (tap) = "makeAdmin()" ></Button>
-    </div>
+    </StackLayout>
 </StackLayout>

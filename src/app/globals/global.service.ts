@@ -12,6 +12,7 @@ import { AdItem } from "./global.supply";
 export class GlobalService {
     admin = false;
     jam = "Brighter day";
+    user = "change";
 
     goldMsg = " Press the Refresh Button for the current Messeges ";
     currentEvent = "";
@@ -24,10 +25,18 @@ export class GlobalService {
     constructor(private http: HttpClient) { }
 
     makeAAdmin(emai: string) {
-        const temp = {Email: emai, Admin: true };
+        const temp = {Email: emai};
         this.adminArr.push(temp);
         this.http.put(this.url, this.adminArr).subscribe();
 
+    }
+
+    checkUser() {
+        console.log(this.user);
+    }
+
+    checkAgain() {
+        this.setAdmin(this.user);
     }
 
     getAdmin() {
@@ -38,6 +47,10 @@ export class GlobalService {
 
     setAdmin(emai: string): void {
         // alert("admin check");
+        // console.log(emai);
+        if (this.user === "change") {
+            this.user = emai;
+        }
         this.http.get<Array<AdItem>>(this.url).subscribe((data) => this.adminArr = data);
         // console.log(this.adminArr.length);
         // tslint:disable-next-line: prefer-for-of
