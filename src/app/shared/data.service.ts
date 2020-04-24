@@ -19,6 +19,7 @@ export class DataService {
             name: "Help Menu",
             description: " Hit Refresh to see current active, Hit Action menu",
             address: "Press the 'Done Hit me' after every entry",
+            date: "04/23/2020",
             time: "Then hit 'Make a new Donatoin'",
             phone: 0
         }
@@ -29,14 +30,6 @@ export class DataService {
         //     address: "32 sddf",
         //     time: "8 pm ",
         //     phone: 4728955
-        // },
-        // {
-        //     id: 3,
-        //     name: "ham Jon",
-        //     description: "tooth bursh",
-        //     address: "48 main",
-        //     time: "2 pm",
-        //     phone: 234345
         // }
 
     );
@@ -55,28 +48,17 @@ export class DataService {
         return this.items.filter((item) => item.id === id)[0];
     }
 
-    makeItemLocal(nam: string, des: string, add: string, tim: string, phone: number) {
-        const temp = {id: 0, name: "", description: "", address: "" , time: "", phone: 0 };
+    makeItemLocal(nam: string, des: string, add: string, day: string, tim: string, phone: number) {
+        const temp = {id: 0, name: "", description: "", address: "" , date: "", time: "", phone: 0 };
         temp.id = this.items.length + 1;
         temp.name = nam;
         temp.description = des;
         temp.address = add;
+        temp.date = day;
         temp.time = tim;
         temp.phone = phone;
         this.items.push(temp);
         alert("made local");
-    }
-    makeItem(nam: string, des: string, add: string, tim: string, phone: number): void {
-        const temp = {id: 0, name: "", description: "", address: "" , time: "", phone: 0 };
-        temp.id = this.items.length;
-        temp.name = nam;
-        temp.description = des;
-        temp.address = add;
-        temp.time = tim;
-        temp.phone = phone;
-        this.http.post(this.url, temp).subscribe();
-        alert("made Server");
-
     }
 
     sendAll(): void {
@@ -100,7 +82,7 @@ export class DataService {
 
             }
         }
-        //alert("not in array returning" + -1);
+        // alert("not in array returning" + -1);
 
         return -1;
         }

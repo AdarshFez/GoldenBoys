@@ -2,9 +2,15 @@
        <Label text="Action Menu"></Label>
        <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
    </ActionBar>
-   <StackLayout class = "Questions" [formGroup]="form">
-          <StackLayout class = "adding" [formGroup]="form">
-                   <Label class ="label" [[ngClass]="{invalid: nameControlValid }"]></Label>
+   <ScrollView orientation="vertical">
+   <StackLayout class = "Questions" [formGroup]="form" VerticalOption = FillAndExpand>
+       <button text = "delete or switch" (tap)= "onSwitch()"></button>
+          <StackLayout *ngIf= dona class = "adding" [formGroup]="form">
+
+
+                   <Label class ="label"
+                     [ngClass]="{invalid: nameControlValid }"
+                   ></Label>
                    <TextField
                         hint="Enter name here"
                         class = "input"
@@ -13,7 +19,7 @@
                         formControlName="name"
                         #nameEL
                    ></TextField>
-                   <label *ngIf="!nameControlValid" text ="please enter a valid Email"></label>
+                   <label *ngIf="!nameControlValid" text ="please enter a Name"></label>
 
                    <Label class ="label"
                        [ngClass]="{ invald: itemControlValid }"
@@ -25,7 +31,7 @@
                         formControlName="item"
                         #itemEL
                    ></TextField>
-                   <label *ngIf="!itemControlValid" text ="please enter a valid Email"></label>
+                   <label *ngIf="!itemControlValid" text ="please enter a Item"></label>
 
                    <Label class ="label"
                        [ngClass]="{ invald: addressControlValid }"
@@ -37,19 +43,31 @@
                         formControlName="address"
                         #addressEL
                    ></TextField>
-                   <label *ngIf="!addressControlValid" text ="please enter a valid Email"></label>
+                   <label *ngIf="!addressControlValid" text ="please enter a valid Address"></label>
+
+                   <DatePicker class = "datePicked" year="2020" month="4" day="20"
+                        [minDate]="minDate" [maxDate]="maxDate"
+                        (dateChange)="onDateChanged($event)"
+                        (dayChange)="onDayChanged($event)"
+                        (monthChange)="onMonthChanged($event)"
+                        (yearChange)="onYearChanged($event)"
+                        (loaded)="onDatePickerLoaded($event)"
+                        verticalAlignment="center">
+                    </DatePicker>
+
+
 
                    <Label class ="label"
                        [ngClass]="{ invald: timeControlValid }"
                    ></Label>
                    <TextField
-                        hint="Enter time and add Am or PM"
+                        hint="Enter time and add Am or PM , EX:  4 PM"
                         class = "input"
                         returnKeyType="next"
                         formControlName="time"
                         #timeEL
                    ></TextField>
-                   <label *ngIf="!timeControlValid" text ="please enter a valid Email"></label>
+                   <label *ngIf="!timeControlValid" text ="please enter a Time"></label>
 
                    <Label class ="label"
                        [ngClass]="{ invald: phoneControlValid }"
@@ -62,27 +80,31 @@
                         formControlName="phone"
                         #phoneEL
                    ></TextField>
-                   <label *ngIf="!phoneControlValid" text ="please enter a valid Email"></label>
+                   <label *ngIf="!phoneControlValid" text ="please enter a phone number with area code "></label>
 
 
-                 <Button text="Make a new Donation" (tap)="local()" ></Button>
-                 <Button text="All Set" (tap)="onSend()" ></Button>
+                 <Button class = "butto" text="Make a new Donation" (tap)="local()" ></Button>
+                 <Button class = "butto" text="All Set" (tap)="onSend()" ></Button>
           </StackLayout>
-          <StackLayout class = "dele">
-          <label text = "Enter Number you want deleted here" ></label>
-          <TextField hint="Enter Number you want deleted here"
-              [text]='deleteNum'
-              keyboardType="datetime"
-              returnKeyType="done"
-              (returnPress)="onReturnPressD($event)"
-           ></TextField>
+          <StackLayout *ngIf="!dona" class = "dele">
+            <label text = "Enter Number you want deleted here" ></label>
+            <Label class ="label"
+                         [ngClass]="{ invald: deleteControlValid }"
+            ></Label>
 
-
-          <Button text = 'press to delete the number entered' (tap)="delete()" ></Button>
-          </StackLayout>
-          <label text = "Hit sync after any changes" ></label>
+            <label *ngIf="!deleteControlValid" text ="please enter a number you want to delete"></label>
+                  <TextField hint="Enter Number you want deleted here"
+                      [text]='deleteNum'
+                      keyboardType="datetime"
+                      returnKeyType="done"
+                      (textChange)="onReturnPressD($event)"
+                  ></TextField>
+            <Button text = 'press to delete the number entered' (tap)="delete()"  [isEnabled] = "!dona"></Button>
+            </StackLayout>
+          <label text = "Hit All set after any changes" ></label>
 
    <!-- <Button text="Refresh List " (tap)="onRefresh()" ></Button> -->
    <!-- help -->
    </StackLayout>
+</ScrollView>
 
