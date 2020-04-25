@@ -11,6 +11,7 @@ import { GlobalService } from "../globals/global.service";
 export class BrowseComponent implements OnInit {
 
     goldMsg = " Press the Refresh Button for the current Messeges ";
+    firstTime = true;
     currentEvent = "";
     missionStatement = "";
     sponsors = "";
@@ -82,6 +83,7 @@ export class BrowseComponent implements OnInit {
         this.currentEvent = this.service.getData(1);
         this.missionStatement = this.service.getData(2);
         this.sponsors = this.service.getData(3);
+        this.firstTime = false;
         this.toggleMenu();
     }
 }

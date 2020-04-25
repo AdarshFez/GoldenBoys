@@ -6,4 +6,10 @@
 
 .form {
     background-color: lightgray;
+    color: black;
+}
+
+.miniTitle{
+    color: black;
+    text-align: center;
 }

@@ -3,7 +3,7 @@
     <!-- <GridLayout> -->
     <GridLayout class = top>
         <Label class = titleText text="Donations"></Label>
-        <button text = Options class = "but" (tap) = "toggleMenu()"></button>
+        <button class = "command" text = Options (tap) = "toggleMenu()"></button>
     </GridLayout>
     <!-- </GridLayout> -->
 
@@ -25,7 +25,7 @@
 
 <StackLayout *ngIf ="menuIsOpen"  >
 
-    <Button class = "command" text="Options" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
+    <Button class = "command" text="Make A Donation" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
     <Button class = "command" text="refresh " (tap)="refreshItems()" ></Button>
     <Button class = "command" text="Log Out " [nsRouterLink]="['']"> </Button>
     <Button text="close menu" class="menu-item" (tap)= "toggleMenu()"></Button>

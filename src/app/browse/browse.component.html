@@ -3,7 +3,7 @@
 
         <GridLayout>
             <Label class = "titleText" text="Good as Gold"></Label>
-            <button text = Options (tap) = "toggleMenu()"></button>
+            <button class = "command" text = Options (tap) = "toggleMenu()"></button>
 
         </GridLayout>
     <!-- </GridLayout> -->
@@ -15,25 +15,24 @@
 
     <StackLayout  class = "GoldMsg">
         <label text = "Golden Message" class = "header"></label>
-        <label [text] = "goldMsg" textWrap = "true"></label>
+        <label class = "mess" *ngIf="firstTime" text = "Hit Options and refresh for lastest Message!"></label>
+        <label class = "mess" [text] = "goldMsg" textWrap = "true"></label>
     </StackLayout>
 
 
     <StackLayout class = ff>
         <label text = "Our Current Event" class = "header"></label>
-        <h1 text = "what"></h1>
-        <h3 text = "here"></h3>
-        <label  [text] = "currentEvent" textWrap = "true"></label>
+        <label class = "mess" [text] = "currentEvent" textWrap = "true"></label>
     </StackLayout>
 
     <StackLayout class = ff>
         <label text = "Our Mission" class = "header"></label>
-        <label [text] = "missionStatement" textWrap = "true"></label>
+        <label class = "mess" [text] = "missionStatement" textWrap = "true"></label>
     </StackLayout>
 
     <StackLayout class = ff>
         <label text = "Shout out to our sponsors" class = "header"></label>
-        <label  [text] = "sponsors" textWrap = "true"></label>
+        <label class = "mess" [text] = "sponsors" textWrap = "true"></label>
     </StackLayout>
 </StackLayout>
 

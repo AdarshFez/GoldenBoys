@@ -3,10 +3,10 @@
     <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
 </ActionBar>
 
-<StackLayout class = "form" [formGroup]="form">
+<StackLayout class = form [formGroup]="form">
 
     <label *ngIf="admin" text ="Welcome to the Edit Menu for the Messeges"></label>
-    <label *ngIf="!admin" text ="Sorry You are not an Admin, enter admin Password"></label>
+    <label *ngIf="!admin" class="miniTitle" text ="Sorry You are not an Admin, enter admin Password in log or contact Golden Boys"></label>
     <!-- Email Login -->
     <button text= "are you admin" (tap) = "isAdmin()"></button>
     <button text= "Check Again" (tap) = checkAgain();></button>

@@ -5,7 +5,7 @@
 
 
 .ff {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 100px;
     align-self: flex-end;
     align-items: center;
@@ -17,7 +17,7 @@
 }
 
 .GoldMsg {
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 10px;
     align-self: center;
     align-items: center;
@@ -38,4 +38,8 @@
     text-align: center;
     font-weight: bold;
     font-size: 14px;
+}
+
+.mess{
+    text-align: center;
 }

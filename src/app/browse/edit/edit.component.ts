@@ -48,11 +48,8 @@ export class EditComponent implements OnInit {
     //this._routerExtensions.back();
     this._routerExtensions.back();
     this.admin = this.glob.isAdmin();
-    this.glob.checkUser();
   }
-    checkUser(){
-        this.glob.checkUser();
-    }
+
     checkAgain(){
         this.glob.checkAgain();
     }
