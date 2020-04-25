@@ -12,12 +12,12 @@ import { AdItem } from "./global.supply";
 export class GlobalService {
     admin = false;
     jam = "Brighter day";
-    user = "change";
 
     goldMsg = " Press the Refresh Button for the current Messeges ";
     currentEvent = "";
     missionStatement = "";
     sponsors = "";
+    user = "change"
 
     private url = "https://goldenboys-be087.firebaseio.com/admin.json";
     private adminArr: Array<AdItem> = new Array();
@@ -25,18 +25,33 @@ export class GlobalService {
     constructor(private http: HttpClient) { }
 
     makeAAdmin(emai: string) {
-        const temp = {Email: emai};
+        const temp = {Email: emai, Admin: true };
         this.adminArr.push(temp);
         this.http.put(this.url, this.adminArr).subscribe();
 
     }
 
-    checkUser() {
-        console.log(this.user);
-    }
-
     checkAgain() {
-        this.setAdmin(this.user);
+        if(this.admin){
+            alert("you are a admin")
+        }
+        else {
+            if(this.adminArr.length > 0){
+                for (let i = 0; i < this.adminArr.length; i++) {
+                    if(this.user === this.adminArr[i].Email )
+                    {
+                        this.admin = true;
+                        alert("you are admin");
+                    } else {
+                        alert("Sorry you don't seem to be an admin");
+                    }
+                }
+            } else {
+                this.setAdmin(this.user);
+                alert("Admin status:" + this.admin);
+            }
+        }
+
     }
 
     getAdmin() {
@@ -47,7 +62,6 @@ export class GlobalService {
 
     setAdmin(emai: string): void {
         // alert("admin check");
-        // console.log(emai);
         if (this.user === "change") {
             this.user = emai;
         }
