@@ -1,31 +1,17 @@
 
 <ActionBar class = "title" >
     <!-- <GridLayout> -->
-        <StackLayout class = top>
+    <GridLayout class = top>
         <Label class = titleText text="Donations"></Label>
-        <FlexboxLayout class = "but">
-            <Button class = "command" text="Options" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
-            <Button class = "command" text="refresh " (tap)="refreshItems()" ></Button>
-            <Button class = "command" text="Log Out " [nsRouterLink]="['']"> </Button>
-        </FlexboxLayout>
-    </StackLayout>
+        <button text = Options class = "but" (tap) = "toggleMenu()"></button>
+    </GridLayout>
     <!-- </GridLayout> -->
 
 </ActionBar>
 
 
-<!-- <GridLayout>
-    <ListView [items]="items">
-        <ng-template let-item="item">
-            <StackLayout>
-                <Label [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
-            </StackLayout>
-        </ng-template>
-    </ListView>
-    This is not used, for example
-</GridLayout> -->
 
-<GridLayout class = "page__content">
+<GridLayout *ngIf ="!menuIsOpen" class = "page__content">
     <ListView [items]="items">
         <ng-template let-item="item">
             <StackLayout>
@@ -37,12 +23,16 @@
 
 </GridLayout>
 
-<!-- <StackLayout>
-<label text = "Hello from home COmpo"></label>
-<label text = "Hello from home COmpo"></label>
-<label text = "Hello from home COmpo"></label>
-<label text = "Hello from home COmpo"></label>
-</StackLayout> -->
+<StackLayout *ngIf ="menuIsOpen"  >
+
+    <Button class = "command" text="Options" [nsRouterLink]="['../action']" pageTransition="slide" ></Button>
+    <Button class = "command" text="refresh " (tap)="refreshItems()" ></Button>
+    <Button class = "command" text="Log Out " [nsRouterLink]="['']"> </Button>
+    <Button text="close menu" class="menu-item" (tap)= "toggleMenu()"></Button>
+
+</StackLayout>
+
+
 
 
 

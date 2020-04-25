@@ -14,6 +14,7 @@ export class BrowseComponent implements OnInit {
     currentEvent = "";
     missionStatement = "";
     sponsors = "";
+    menuIsOpen: boolean = false;
 
     constructor(private service: MsgService , private glob: GlobalService) { }
 
@@ -28,6 +29,12 @@ export class BrowseComponent implements OnInit {
         this.missionStatement = this.glob.getMis();
         this.sponsors = this.glob.getSpon();
         // Use the "ngOnInit" handler to initialize data for the view.
+    }
+
+    toggleMenu() {
+        this.menuIsOpen = !this.menuIsOpen;
+        console.log("switch");
+
     }
 
     getGold() {
@@ -76,5 +83,6 @@ export class BrowseComponent implements OnInit {
         this.currentEvent = this.service.getData(1);
         this.missionStatement = this.service.getData(2);
         this.sponsors = this.service.getData(3);
+        this.toggleMenu();
     }
 }

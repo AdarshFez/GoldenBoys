@@ -1,5 +1,8 @@
 <ActionBar class = "title">
+    <GridLayout>
     <Label class = ff text="Events"></Label>
+    <button text = Options (tap) = "toggleMenu()"></button>
+</GridLayout>
 </ActionBar>
 
 <!--
@@ -16,6 +19,16 @@
 
 <!-- <img class="BigEvent" src="./beach.jpg"> -->
 
-<StackLayout class="page__content">
+
+<StackLayout *ngIf ="!menuIsOpen" class="page__content">
     <Image src="~/app/search/box.jpg" stretch="aspectFill"></Image>
 </StackLayout>
+
+<StackLayout *ngIf ="menuIsOpen"  >
+
+    <Button class = "command" text="Log Out " [nsRouterLink]="['']"> </Button>
+
+    <Button text="close menu" class="menu-item" (tap)= "toggleMenu()"></Button>
+
+</StackLayout>
+

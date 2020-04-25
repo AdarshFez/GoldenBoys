@@ -10,6 +10,7 @@ import { DataItem } from "../shared/data.supply";
 })
 export class HomeComponent implements OnInit {
      items: Array<DataItem>;
+     menuIsOpen: boolean = false;
 
      constructor(private _itemService: DataService) { }
 
@@ -21,6 +22,12 @@ export class HomeComponent implements OnInit {
      refreshItems() {
         this._itemService.onGetData();
         this.items = this._itemService.getItems();
+    }
+
+     toggleMenu() {
+        this.menuIsOpen = !this.menuIsOpen;
+        console.log("switch");
+
     }
 
 }
