@@ -1,0 +1,38 @@
+.dialogOpen .content {
+    opacity: 0.2;
+  }
+  .dialogOpen .dialog-wrapper {
+    visibility: visible;
+  }
+  .dialog-wrapper {
+    visibility: collapse;
+  }
+  .dialog {
+    border-width: 1 0 1 0;
+    border-color: black;
+    width: 100%;
+    margin-top: 100;
+  }
+
+.Questions {
+  padding-top: 10px;
+  align-content: center;
+  text-align: center;
+}
+
+.butto {
+  color: black;
+}
+
+.datePicked {
+  /* background-color: olivedrab; */
+  /* border-color: burlywood; */
+  border-width: 2;
+  border-radius: 10;
+  color: whitesmoke;
+  vertical-align: middle;
+}
+
+.Questions{
+  color: black;
+}
