@@ -33,7 +33,6 @@ export class BrowseComponent implements OnInit {
 
     toggleMenu() {
         this.menuIsOpen = !this.menuIsOpen;
-        console.log("switch");
 
     }
 

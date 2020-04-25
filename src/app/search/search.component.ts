@@ -10,7 +10,6 @@ export class SearchComponent {
 
     toggleMenu() {
         this.menuIsOpen = !this.menuIsOpen;
-        console.log("switch");
 
     }
 }
