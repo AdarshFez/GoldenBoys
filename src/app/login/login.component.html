@@ -13,6 +13,7 @@
     [ngClass]="{ invald: !emailControlIsValid }"
     ></Label>
     <!-- Email Login -->
+    <Label class ="label" text ="Enter Email"></Label>
     <TextField hint="Enter Email"
            class ="input"
            keyboardType="Email"
@@ -29,8 +30,9 @@
     <Label class ="label"
      [ngClass]="{ invald: !passwordControlIsValid }"
     ></Label>
-    <TextField hint="Enter Password with atleast 6 characters"
-
+    <Label class ="label" text ="Enter Password"></Label>
+    <TextField
+           hint="Enter Password with atleast 6 characters"
            secure="false"
            keyboardType="Email"
            returnKeyType="done"
@@ -50,7 +52,7 @@
     *ngIf = "!isLoading"
     ></Button>
     <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
-    <Button class ="btn btn-flat" text="Tabs" (tap) = "toTabs()"></Button>
+    <!-- <Button class ="btn btn-flat" text="Tabs" (tap) = "toTabs()"></Button> -->
 
     <!-- <Button class ="btn btn-flat" text="admin" (tap) = "getAdmin()"></Button> -->
 </StackLayout>

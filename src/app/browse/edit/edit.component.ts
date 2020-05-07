@@ -22,10 +22,10 @@ export class EditComponent implements OnInit {
     sponsors = "";
     admin = false;
     @ViewChild("emailEL", null) emailEL: ElementRef <TextField>;
-    constructor(private _routerExtensions: RouterExtensions, private glob: GlobalService) { }
+    constructor(private _routerExtensions: RouterExtensions,
+                private glob: GlobalService, private brow: BrowseComponent) { }
 
     ngOnInit(): void {
-
         this.goldMsg = this.glob.getGold();
         this.currentEvent = this.glob.getCur();
         this.missionStatement = this.glob.getMis();
@@ -56,13 +56,12 @@ export class EditComponent implements OnInit {
     makeAdmin() {
         this.emailEL.nativeElement.focus();
         this.emailEL.nativeElement.dismissSoftInput();
-        console.log("made to admin");
         if (!this.form.valid) {
+            alert("Something went wrong, check what was entered");
+
             return;
         }
-        console.log("made to admin 2");
         const email = this.form.get("email").value;
-        //this.form.reset();
         this.emailControlIsValid = true;
         alert(email);
         this.glob.makeAAdmin(email);

@@ -3,10 +3,19 @@
     <Label [text]="item.name"></Label>
 </ActionBar>
 
-<StackLayout>
+<StackLayout *ngIf = admin&&!first>
     <Label class="m-10 h3" verticalAlignment="top" [text]="'Name is: ' + item.name"></Label>
     <Label class="m-10 h3" verticalAlignment="top" [text]="'This item is: ' + item.description"></Label>
     <Label class="m-10 h3" verticalAlignment="top" [text]="'The address is: '+item.address"></Label>
     <Label class="m-10 h3" verticalAlignment="top" [text]="'The time is: '+item.time"></Label>
     <Label class="m-10 h3" verticalAlignment="top" [text]="'This phone number is: ' +item.phone"></Label>
+</StackLayout>
+
+<StackLayout *ngIf = !admin&&!first>
+    <Label class="m-10 h3" verticalAlignment="top" [text]="'This item is: ' + item.description"></Label>
+    <Label class="m-10 h3" verticalAlignment="top" text = "To See more please log in with an Admin Account"> </Label>
+</StackLayout>
+
+<StackLayout *ngIf = first>
+    <label class = "m-10 h3" text = "Hello Welcome to the Donation help, Click on the Options to refresh the page and go to the make a donation page" textWrap = "true"></label>
 </StackLayout>

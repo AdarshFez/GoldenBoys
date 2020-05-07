@@ -20,6 +20,7 @@ export class BrowseComponent implements OnInit {
     constructor(private service: MsgService , private glob: GlobalService) { }
 
     ngOnInit(): void {
+        this.menuIsOpen = false;
         this.service.onGetData();
         this.glob.setGold(this.service.getData(0));
         this.glob.setCur(this.service.getData(1));
@@ -65,7 +66,7 @@ export class BrowseComponent implements OnInit {
         return this.sponsors;
     }
 
-    setSpon(mms: string){
+    setSpon(mms: string) {
         this.sponsors = mms;
     }
 

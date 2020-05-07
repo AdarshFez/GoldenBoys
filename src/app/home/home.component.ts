@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
      refreshItems() {
         this._itemService.onGetData();
         this.items = this._itemService.getItems();
+        this.toggleMenu();
     }
 
      toggleMenu() {

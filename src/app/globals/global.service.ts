@@ -17,7 +17,7 @@ export class GlobalService {
     currentEvent = "";
     missionStatement = "";
     sponsors = "";
-    user = "change"
+    user = "change";
 
     private url = "https://goldenboys-be087.firebaseio.com/admin.json";
     private adminArr: Array<AdItem> = new Array();
@@ -28,17 +28,16 @@ export class GlobalService {
         const temp = {Email: emai, Admin: true };
         this.adminArr.push(temp);
         this.http.put(this.url, this.adminArr).subscribe();
-
+        alert("They were made an Admin");
     }
 
     checkAgain() {
-        if(this.admin){
-            alert("you are a admin")
-        }
-        else {
-            if(this.adminArr.length > 0){
+        if (this.admin) {
+            alert("you are an Admin")
+        } else {
+            if (this.adminArr.length > 0) {
                 for (let i = 0; i < this.adminArr.length; i++) {
-                    if(this.user === this.adminArr[i].Email )
+                    if (this.user === this.adminArr[i].Email )
                     {
                         this.admin = true;
                         alert("you are admin");
@@ -58,6 +57,11 @@ export class GlobalService {
         // console.log(this.adminArr.length);
         this.http.get<Array<AdItem>>(this.url).subscribe((data) => this.adminArr = data);
         // console.log(this.adminArr.length);
+    }
+
+    resetUser() {
+        this.user = "change";
+        this.admin = false;
     }
 
     setAdmin(emai: string): void {

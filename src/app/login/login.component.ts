@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
                 private glob: GlobalService)  { }
 
     ngOnInit(): void {
+        this.glob.resetUser();
         this.form = new FormGroup({
             email: new FormControl(null, {updateOn: "blur", validators:
             [Validators.required, Validators.email]}),
