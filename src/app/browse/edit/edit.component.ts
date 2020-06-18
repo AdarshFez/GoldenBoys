@@ -3,7 +3,6 @@ import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 
-import { BrowseComponent } from "../browse.component";
 import { GlobalService } from "~/app/globals/global.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { TextField } from "tns-core-modules/ui/text-field/text-field";
@@ -23,7 +22,7 @@ export class EditComponent implements OnInit {
     admin = false;
     @ViewChild("emailEL", null) emailEL: ElementRef <TextField>;
     constructor(private _routerExtensions: RouterExtensions,
-                private glob: GlobalService, private brow: BrowseComponent) { }
+                private glob: GlobalService) { }
 
     ngOnInit(): void {
         this.goldMsg = this.glob.getGold();

@@ -8,7 +8,6 @@ import { DatePicker } from "tns-core-modules/ui/date-picker";
 import { convertString } from "tns-core-modules/utils/utils";
 import { isString, isNumber } from "tns-core-modules/utils/types";
 import { GlobalService } from "~/app/globals/global.service";
-import { BrowseComponent } from "../../browse/browse.component";
 
 @Component({
     selector: "actionIt",
@@ -45,7 +44,6 @@ export class ActionComponent implements OnInit {
 
      constructor(
          private service: DataService,
-         private browse: BrowseComponent,
          private _routerExtensions: RouterExtensions,
          private glob: GlobalService
          ) { }
@@ -195,7 +193,6 @@ export class ActionComponent implements OnInit {
         item + " The address  : " + address + "The date of: " + date + " The Time  : "
         + time  + " The Item  : " + phone + "if this looks good hit all set!" + "error" + this.error);
         console.log(this.localsize());
-        this.browse.refresh();
     }
         // get local size
      localsize(): void {
