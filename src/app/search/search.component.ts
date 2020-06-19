@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { device, screen, isAndroid, isIOS } from "tns-core-modules/platform";
 
 @Component({
     selector: "Search",
@@ -7,9 +8,12 @@ import { Component } from "@angular/core";
 })
 export class SearchComponent {
     menuIsOpen: boolean = false;
+    devHeight = screen.mainScreen.heightPixels;
+    devWidth = screen.mainScreen.widthPixels;
 
     toggleMenu() {
         this.menuIsOpen = !this.menuIsOpen;
 
+        alert (this.devHeight) ;
     }
 }
