@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { device, screen, isAndroid, isIOS } from "tns-core-modules/platform";
 
 import { MsgService } from "../shared/notes.service";
 import { GlobalService } from "../globals/global.service";
@@ -16,10 +17,14 @@ export class BrowseComponent implements OnInit {
     missionStatement = "";
     sponsors = "";
     menuIsOpen: boolean = false;
+    devHeight = screen.mainScreen.heightPixels;
+    itemHeight = this.devHeight/16;
+    devWidth = screen.mainScreen.widthPixels;
 
     constructor(private service: MsgService , private glob: GlobalService) { }
 
     ngOnInit(): void {
+        // alert(this.devHeight + "ss" + this.itemHeight);
         this.menuIsOpen = false;
         this.service.onGetData();
         this.glob.setGold(this.service.getData(0));

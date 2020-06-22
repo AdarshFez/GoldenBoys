@@ -9,34 +9,35 @@
     <!-- </GridLayout> -->
 </ActionBar>
 
-<StackLayout  *ngIf ="!menuIsOpen"   class="page__content" >
+<DockLayout   *ngIf ="!menuIsOpen" >
     <!-- <Button class = "Find Length" text="refresh " (tap)="length()" ></Button>
     Button class = "sending to server" text="refresh " (tap)="test()" ></Button> -->
 
-    <StackLayout  class = "GoldMsg">
+    <StackLayout  class = ff dock="top" [height] = itemHeight [width] = devWidth>
         <label text = "Golden Message" class = "header"></label>
         <label class = "mess" *ngIf="firstTime" text = "Hit Options and refresh for lastest Message!"></label>
         <label class = "mess" [text] = "goldMsg" textWrap = "true"></label>
     </StackLayout>
 
 
-    <StackLayout class = ff>
-        <label text = "Our Current Event" class = "header"></label>
+    <StackLayout class = ff dock="top" [height] = itemHeight-100 [width] = devWidth>
+        <label text = "Our Current Event" class = "header" ></label>
         <label class = "mess" [text] = "currentEvent" textWrap = "true"></label>
     </StackLayout>
 
-    <StackLayout class = ff>
+    <StackLayout class = ff dock="top" [height] = itemHeight [width] = devWidth>
         <label text = "Our Mission" class = "header"></label>
         <label class = "mess" [text] = "missionStatement" textWrap = "true"></label>
     </StackLayout>
 
-    <StackLayout class = ff>
+    <StackLayout class = ff dock="top" [height] = itemHeight [width] = devWidth>
         <label text = "Shout out to our sponsors" class = "header"></label>
         <label class = "mess" [text] = "sponsors" textWrap = "true"></label>
+        <label class = "mess" *ngIf="firstTime" text = "Hit Options and refresh for lastest Message!"></label>
     </StackLayout>
-</StackLayout>
+</DockLayout>
 
-    <StackLayout *ngIf ="menuIsOpen"  >
+<StackLayout *ngIf ="menuIsOpen"  >
 
 
         <Button class = "command" text="Admin" [nsRouterLink]="['../edit']" pageTransition="slide" ></Button>
@@ -47,6 +48,6 @@
 
         <Button text="close menu" class="menu-item" (tap)= "toggleMenu()"></Button>
 
-    </StackLayout>
+</StackLayout>
 
 

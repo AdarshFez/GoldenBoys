@@ -21,7 +21,7 @@
 
 
 <StackLayout *ngIf ="!menuIsOpen"  class="page__content">
-    <Image class = "pic" src="~/app/search/box.jpg" stretch="aspectFit"></Image>
+    <Image class = "pic" [width] = devWidth [height]= devHeight src="~/app/search/box.jpg" stretch="aspectFit"></Image>
 </StackLayout>
 
 <StackLayout *ngIf ="menuIsOpen"  >
@@ -31,4 +31,5 @@
     <Button text="close menu" class="menu-item" (tap)= "toggleMenu()"></Button>
 
 </StackLayout>
+
 
