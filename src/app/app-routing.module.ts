@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+
 import { LoginComponent } from "./login/login.component";
 // //profileTab:profile/default
 // "/(homeTab:home/default//browseTab:browse/default//searchTab:search/default)"
