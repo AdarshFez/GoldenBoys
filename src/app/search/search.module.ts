@@ -18,6 +18,8 @@ import { SearchComponent } from "./search.component";
     declarations: [
         SearchComponent
     ],
+    providers: [
+    ],
     schemas: [
         NO_ERRORS_SCHEMA
     ]

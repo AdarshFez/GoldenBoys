@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>515103451981-q5tvobv5ddneddn0e6guqh3n33qs1rfb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.515103451981-q5tvobv5ddneddn0e6guqh3n33qs1rfb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDXlTCmw3vQ1gEhtO7aEjMK48ILQda4QiE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>515103451981</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Saan.GoldenBoys</string>
+	<key>PROJECT_ID</key>
+	<string>goldenboys-be087</string>
+	<key>STORAGE_BUCKET</key>
+	<string>goldenboys-be087.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:515103451981:ios:1e2226672440e860616504</string>
+	<key>DATABASE_URL</key>
+	<string>https://goldenboys-be087.firebaseio.com</string>
+</dict>
+</plist>

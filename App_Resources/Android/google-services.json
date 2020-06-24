@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "515103451981",
+    "firebase_url": "https://goldenboys-be087.firebaseio.com",
+    "project_id": "goldenboys-be087",
+    "storage_bucket": "goldenboys-be087.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515103451981:android:ae300e5759ae8302616504",
+        "android_client_info": {
+          "package_name": "com.Saan.GoldenBoys"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515103451981-9ugvp5e94j5kls9n2q2nj7qsd8fdg7ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsm1ujBS25f9DyQPAB0qXi-x8jouNueqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515103451981-9ugvp5e94j5kls9n2q2nj7qsd8fdg7ee.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "515103451981-q5tvobv5ddneddn0e6guqh3n33qs1rfb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Saan.GoldenBoys"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
