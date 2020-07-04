@@ -3,6 +3,9 @@
     "id": "com.SAAN.Goldenboys",
     "tns-android": {
       "version": "6.5.1"
+    },
+    "tns-ios": {
+      "version": "6.5.1"
     }
   },
   "description": "NativeScript Application",
