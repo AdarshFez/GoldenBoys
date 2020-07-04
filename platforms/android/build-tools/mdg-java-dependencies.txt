@@ -38,3 +38,4 @@ C:\Users\Fez\Desktop\Coding\Apps\GoldenBoys\platforms\android\app\build\exploded
 C:\Users\Fez\Desktop\Coding\Apps\GoldenBoys\platforms\android\app\build\exploded-dependencies\e6292b09f47d09e1ab4ec61fec6b1e1c\classes.jar
 C:\Users\Fez\Desktop\Coding\Apps\GoldenBoys\platforms\android\app\build\exploded-dependencies\e9f79d1483518301f62bef11db6cde62\classes.jar
 C:\Users\Fez\Desktop\Coding\Apps\GoldenBoys\platforms\android\app\build\exploded-dependencies\f4a5f44aabde9da21a9f628b289b5507\classes.jar
+C:\Users\Fez\Desktop\Coding\Apps\GoldenBoys\platforms\android\app\build\intermediates\javac\release
