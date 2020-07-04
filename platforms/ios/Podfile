@@ -1,0 +1,14 @@
+use_frameworks!
+
+target "GoldenBoys" do
+# NativeScriptPlatformSection /Users/adarshkumar/Desktop/Coding/Angular/GoldenBoys/node_modules/@nativescript/core/platforms/ios/Podfile with 9.0
+platform :ios, '9.0'
+# End NativeScriptPlatformSection
+
+# Begin Podfile - /Users/adarshkumar/Desktop/Coding/Angular/GoldenBoys/node_modules/@nativescript/core/platforms/ios/Podfile
+# platform :ios, '9.0'
+use_frameworks!
+
+pod 'MaterialComponents/Tabs', '~> 94.5'
+# End Podfile
+end
