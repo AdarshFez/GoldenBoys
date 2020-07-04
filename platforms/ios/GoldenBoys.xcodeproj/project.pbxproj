@@ -102,13 +102,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		3896C3D44BB046298D9CFDB3 /* TNSNativeSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TNSNativeSource;
-			sourceTree = "<group>";
-		};
 		42C751E1232B767700186695 /* Build Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +121,10 @@
 				858B833718CA111C00AB12DE /* GoldenBoys */,
 				858B833018CA111C00AB12DE /* Frameworks */,
 				858B832F18CA111C00AB12DE /* Products */,
-				3896C3D44BB046298D9CFDB3 /* TNSNativeSource */,
 				040D6ABC4E11475DA74D8E90 /* @nativescript/core */,
 				C244AAB047004AB8A889D15B /* tns-core-modules-widgets */,
 				3798C2DACDDE592EE6136256 /* Pods */,
+				477B3E1DB0C6441B9D4E40A1 /* TNSNativeSource */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,6 +192,13 @@
 				13C3FC27A4354C9088B017CD /* build.xcconfig */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		477B3E1DB0C6441B9D4E40A1 /* TNSNativeSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TNSNativeSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,10 +489,11 @@
 					"\"$(SRCROOT)/../../App_Resources/iOS/src\"",
 					"\"$(SRCROOT)/../../node_modules/@nativescript/core/platforms/ios/src\"",
 					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios/src\"",
+					"\"$(SRCROOT)/../../App_Resources/iOS/src\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GoldenBoys/GoldenBoys-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SAAN.Goldenboys;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SAAN.Goldenboys";
 				PRODUCT_NAME = GoldenBoys;
 				WRAPPER_EXTENSION = app;
 			};
@@ -517,10 +518,11 @@
 					"\"$(SRCROOT)/../../App_Resources/iOS/src\"",
 					"\"$(SRCROOT)/../../node_modules/@nativescript/core/platforms/ios/src\"",
 					"\"$(SRCROOT)/../../node_modules/tns-core-modules-widgets/platforms/ios/src\"",
+					"\"$(SRCROOT)/../../App_Resources/iOS/src\"",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/GoldenBoys/GoldenBoys-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SAAN.Goldenboys;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.SAAN.Goldenboys";
 				PRODUCT_NAME = GoldenBoys;
 				WRAPPER_EXTENSION = app;
 			};
